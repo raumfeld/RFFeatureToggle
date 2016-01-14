@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'RFFeatureToggle_Example', :exclusive => true do
+  pod "RFFeatureToggle", :path => "../"
+end
+
+target 'RFFeatureToggle_Tests', :exclusive => true do
+  pod "RFFeatureToggle", :path => "../"
+
+  pod 'FBSnapshotTestCase'
+end
