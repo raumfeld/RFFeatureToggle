@@ -9,4 +9,6 @@ target 'RFFeatureToggle_Tests', :exclusive => true do
   pod "RFFeatureToggle", :path => "../"
 
   pod 'FBSnapshotTestCase'
+  pod 'OHHTTPStubs'
+  pod 'OCMock'
 end

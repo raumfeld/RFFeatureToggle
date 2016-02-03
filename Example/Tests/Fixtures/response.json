@@ -1,0 +1,34 @@
+{
+    "lorem":{
+        "enabled":false
+    },
+    "ipsum":{
+        "enabled":true
+    },
+    "dolor":{
+        "enabled":true
+    },
+    "sit":{
+        "enabled":false
+    },
+    "amet":{
+        "enabled":true
+    },
+    "semper":{
+        "aperiam":{
+            "enabled":true
+        }
+    },
+    "neglegentur":{
+        "enabled":true
+    },
+    "comprehensam":{
+        "enabled":true
+    },
+    "ut":{
+        "enabled":false
+    },
+    "est":{
+        "enabled":true
+    }
+}

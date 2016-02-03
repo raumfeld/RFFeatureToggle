@@ -3,16 +3,22 @@
 //  RFFeatureToggle
 //
 //  Created by Dunja Lalic on 01/14/2016.
-//  Copyright (c) 2016 Dunja Lalic. All rights reserved.
+//  Copyright (c) 2016 Raumfeld. All rights reserved.
 //
 
 #import "RFAppDelegate.h"
+#import "RFFeatureToggle.h"
 
 @implementation RFAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    NSDictionary *params = @{kRFFeatureToggleBaseURLStringForStagingKey : @"https://staging/",
+                             kRFFeatureToggleBaseURLStringForProductionKey : @"https://production/"};
+    [RFFeatureToggleDefaults sharedDefaultsWithMode:RFFeatureToggleModeProduction params:params];
+    
     return YES;
 }
 
@@ -36,6 +42,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    //[RFFeatureCache refreshFeatures];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

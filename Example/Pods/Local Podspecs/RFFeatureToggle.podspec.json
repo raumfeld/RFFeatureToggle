@@ -1,0 +1,24 @@
+{
+  "name": "RFFeatureToggle",
+  "version": "0.1.0",
+  "license": "MIT",
+  "summary": "A simple A/B testing framework for remotely switching features on and off and having the changes reflect in the app immediately.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/RFFeatureToggle",
+  "authors": {
+    "Dunja Lalic": "Dunja Lalic <dunja.lalic@teufel.de>"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/RFFeatureToggle.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "dependencies": {
+    "AFNetworking": [
+      "~> 2.0"
+    ]
+  }
+}
