@@ -104,7 +104,11 @@
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-
+        cell.preservesSuperviewLayoutMargins = YES;
+        cell.contentView.preservesSuperviewLayoutMargins = YES;
+        cell.layoutMargins = UIEdgeInsetsZero;
+        cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:14.0f];
+        
         UISwitch *enabledSwitch = [[UISwitch alloc] init];
         enabledSwitch.userInteractionEnabled = NO;
         cell.accessoryView = enabledSwitch;
