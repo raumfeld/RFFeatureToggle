@@ -15,7 +15,7 @@ A simple A/B testing framework for remotely switching features on and off and ha
 
 Initialize the defaults with **params**, a dictionary containing base URLs for staging and production.
 
-```
+```objective-c
 NSDictionary *params = @{kRFFeatureToggleBaseURLStringForStagingKey : @"https://staging/",
 						 kRFFeatureToggleBaseURLStringForProductionKey : @"https://production/"};
                              
@@ -26,19 +26,19 @@ For an easy start there are 3 convenience methods:
 
 ### Check if a feature is enabled
 
-```
+```objective-c
 [RFeatureToggle isEnabled:@"feature"];
 ```
 
 If the API supports features within features within features, these can be separated with dots like
 
-```
+```objective-c
 [RFeatureToggle isEnabled:@"feature.subfeature.subsubfeature"];
 ```
 
 ### Refresh all features and cache them
 
-```
+```objective-c
 [RFeatureToggle refresh];
 ```
 
@@ -46,7 +46,7 @@ This can be called on `applicationDidBecomeActive:` or whenever convenient. Afte
 
 ### Fetch all features from the cache
 
-```
+```objective-c
 NSArray *features = [RFeatureToggle allFeatures];
 ```
 
@@ -100,7 +100,7 @@ Aside convenience methods provided in `RFFeatureToggle` class, there are model-c
 
 #### To handle error when fetching all features
 
-```
+```objective-c
 [RFFeature fetchFeaturesUsingBlock:^(BOOL succeeded, NSError *error) {
 	if (!succeeded)
 	{
@@ -111,7 +111,7 @@ Aside convenience methods provided in `RFFeatureToggle` class, there are model-c
 
 #### To inspect the date of last successful update
 
-```
+```objective-c
 NSTimeInterval secondsSinceLastSuccessfulUpdate = [RFFeatureCache timeIntervalSinceLastSuccessfulUpdate];
 if	(secondsSinceLastSuccessfulUpdate > 120.0f)
 {
@@ -129,7 +129,7 @@ if	(secondsSinceLastSuccessfulUpdate > 120.0f)
 RFFeatureToggle is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-```
+```ruby
 pod "RFFeatureToggle"
 ```
 
