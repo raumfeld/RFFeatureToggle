@@ -38,7 +38,7 @@
     if (self.feature)
     {
         self.title = self.feature.name;
-        self.features = [self sortedFeatures:self.feature.features];
+        self.features = self.feature.features;
 
         //remove refresh control as only the root list of features can be refreshed
         [self.refreshControl endRefreshing];
@@ -47,7 +47,7 @@
     else
     {
         self.title = @"All features";
-        self.features = [self sortedFeatures:[RFFeatureToggle allFeatures]];
+        self.features = [RFFeatureToggle allFeatures];
     }
 }
 
@@ -57,20 +57,13 @@
 {
     [RFFeature fetchFeaturesUsingBlock:^(BOOL succeeded, NSError *error) {
         [sender endRefreshing];
-        self.features = [self sortedFeatures:[RFFeatureToggle allFeatures]];
+        self.features = [RFFeatureToggle allFeatures];
         [self.tableView reloadData];
         if (error)
         {
             [self handleError:error];
         }
     }];
-}
-
-- (NSArray *)sortedFeatures:(NSArray *)features
-{
-    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
-    NSArray *sortedArray = [features sortedArrayUsingDescriptors:@[descriptor]];
-    return sortedArray;
 }
 
 - (void)handleError:(NSError *)error
@@ -104,16 +97,6 @@
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        if ([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)])
-        {
-            cell.preservesSuperviewLayoutMargins = YES;
-            cell.contentView.preservesSuperviewLayoutMargins = YES;
-        }
-        if ([cell respondsToSelector:@selector(setLayoutMargins:)])
-        {
-            cell.layoutMargins = UIEdgeInsetsZero;
-        }
-        cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:14.0f];
         
         UISwitch *enabledSwitch = [[UISwitch alloc] init];
         enabledSwitch.userInteractionEnabled = NO;
