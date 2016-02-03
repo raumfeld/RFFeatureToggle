@@ -25,6 +25,8 @@
 {
     [super setUp];
 
+    self.deviceAgnostic = YES;
+    
     NSDictionary *params = @{kRFFeatureToggleBaseURLStringForStagingKey : @"https://staging/",
                              kRFFeatureToggleBaseURLStringForProductionKey : @"https://production/"};
     [RFFeatureToggleDefaults sharedDefaultsWithMode:RFFeatureToggleModeProduction params:params];
