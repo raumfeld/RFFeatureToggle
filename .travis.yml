@@ -5,12 +5,11 @@
 language: objective-c
 cache: cocoapods
 podfile: Example/Podfile
-before_install:
+# before_install:
 # - gem install cocoapods # Since Travis is not always on latest version
 # - pod install --project-directory=Example
-- pip install codecov
 script:
-- set -o pipefail && xcodebuild test -workspace Example/RFFeatureToggle.xcworkspace -scheme RFFeatureToggle-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -workspace Example/RFFeatureToggle.xcworkspace -scheme RFFeatureToggle-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty
 - pod lib lint
 after_success:
-  - codecov
+- bash <(curl -s https://codecov.io/bash)
