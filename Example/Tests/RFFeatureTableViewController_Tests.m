@@ -24,7 +24,7 @@
 - (void)setUp
 {
     [super setUp];
-    self.recordMode = YES;
+    
     NSDictionary *params = @{kRFFeatureToggleBaseURLStringForStagingKey : @"https://staging/",
                              kRFFeatureToggleBaseURLStringForProductionKey : @"https://production/"};
     [RFFeatureToggleDefaults sharedDefaultsWithMode:RFFeatureToggleModeProduction params:params];
@@ -62,7 +62,6 @@
         NSIndexPath *randomIndexPath = [NSIndexPath indexPathForRow:randomIndex inSection:0];
         UITableViewCell *cell = [self.sut tableView:self.sut.tableView cellForRowAtIndexPath:randomIndexPath];
         XCTAssertNotNil(cell,@"Cell should not be nil");
-        XCTAssertNotNil(cell.accessoryView,@"Cell's accessoryView should not be nil");
     }];
 
     [OHHTTPStubs removeStub:stub];
@@ -122,7 +121,7 @@
         }];
         [[mockNavController expect] pushViewController:viewController animated:YES];
 
-        [self.sut tableView:self.sut.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        [self.sut tableView:self.sut.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:7 inSection:0]];
 
         [mockNavController verify];
         [sutMock verify];
@@ -158,7 +157,7 @@
         }];
         [[sutMock expect] presentViewController:navigationViewController animated:YES completion:NULL];
 
-        [self.sut tableView:self.sut.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        [self.sut tableView:self.sut.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:7 inSection:0]];
 
         [sutMock verify];
         [sutMock stopMocking];

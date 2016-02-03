@@ -47,7 +47,7 @@
     else
     {
         self.title = @"All features";
-        self.features = [RFFeatureToggle allFeatures];
+        self.features = [self sortedFeatures:[RFFeatureToggle allFeatures]];
     }
 }
 
@@ -57,13 +57,20 @@
 {
     [RFFeature fetchFeaturesUsingBlock:^(BOOL succeeded, NSError *error) {
         [sender endRefreshing];
-        self.features = [RFFeatureToggle allFeatures];
+        self.features = [self sortedFeatures:[RFFeatureToggle allFeatures]];
         [self.tableView reloadData];
         if (error)
         {
             [self handleError:error];
         }
     }];
+}
+
+- (NSArray *)sortedFeatures:(NSArray *)features
+{
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSArray *sortedArray = [features sortedArrayUsingDescriptors:@[descriptor]];
+    return sortedArray;
 }
 
 - (void)handleError:(NSError *)error
