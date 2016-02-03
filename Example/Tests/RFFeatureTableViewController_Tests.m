@@ -24,8 +24,6 @@
 - (void)setUp
 {
     [super setUp];
-
-    self.deviceAgnostic = YES;
     
     NSDictionary *params = @{kRFFeatureToggleBaseURLStringForStagingKey : @"https://staging/",
                              kRFFeatureToggleBaseURLStringForProductionKey : @"https://production/"};
@@ -55,7 +53,7 @@
     [self waitForExpectationsWithTimeout:1.0f handler:^(NSError *error) {
         XCTAssertNil(error);
 
-        FBSnapshotVerifyView(self.sut.view, nil);
+        FBSnapshotVerifyView(self.sut.view, (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? @"iPad" : @"iPhone");
     }];
 
     [OHHTTPStubs removeStub:stub];
