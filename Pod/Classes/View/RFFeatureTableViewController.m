@@ -104,11 +104,15 @@
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        if ([cell respondsToSelector:@selector(preservesSuperviewLayoutMargins)]) {
+        if ([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)])
+        {
             cell.preservesSuperviewLayoutMargins = YES;
             cell.contentView.preservesSuperviewLayoutMargins = YES;
         }
-        cell.layoutMargins = UIEdgeInsetsZero;
+        if ([cell respondsToSelector:@selector(setLayoutMargins:)])
+        {
+            cell.layoutMargins = UIEdgeInsetsZero;
+        }
         cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:14.0f];
         
         UISwitch *enabledSwitch = [[UISwitch alloc] init];
