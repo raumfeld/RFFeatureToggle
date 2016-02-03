@@ -36,7 +36,7 @@ PODS:
     - OHHTTPStubs/Core
   - OHHTTPStubs/OHPathHelpers (4.7.0)
   - RFFeatureToggle (0.1.0):
-    - AFNetworking (= 2.5.4)
+    - AFNetworking (< 2.6)
 
 DEPENDENCIES:
   - FBSnapshotTestCase (~> 1.8)
@@ -53,6 +53,6 @@ SPEC CHECKSUMS:
   FBSnapshotTestCase: 3dc3899168747a0319c5278f5b3445c13a6532dd
   OCMock: 18c9b7e67d4c2770e95bb77a9cc1ae0c91fe3835
   OHHTTPStubs: d2bf6a0f407620d67e75a1d3f12d86a2b1dd15c0
-  RFFeatureToggle: 0dc6a903657ce3557b1a103cefa618e54ae79df8
+  RFFeatureToggle: f0c2e4a7a09a202fca54627be4dffb9e8b8d72e5
 
 COCOAPODS: 0.39.0

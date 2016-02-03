@@ -18,7 +18,7 @@
   "source_files": "Pod/Classes/**/*",
   "dependencies": {
     "AFNetworking": [
-      "2.5.4"
+      "< 2.6"
     ]
   }
 }
