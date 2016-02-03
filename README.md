@@ -1,6 +1,7 @@
 # RFFeatureToggle
 
 [![CI Status](http://img.shields.io/travis/raumfeld/RFFeatureToggle.svg?style=flat)](https://travis-ci.org/raumfeld/RFFeatureToggle)
+[![codecov.io](https://codecov.io/github/raumfeld/RFFeatureToggle/coverage.svg?branch=master)](https://codecov.io/github/raumfeld/RFFeatureToggle/coverage.svg?branch=master)
 [![Version](https://img.shields.io/cocoapods/v/RFFeatureToggle.svg?style=flat)](http://cocoapods.org/pods/RFFeatureToggle)
 [![License](https://img.shields.io/cocoapods/l/RFFeatureToggle.svg?style=flat)](http://cocoapods.org/pods/RFFeatureToggle)
 [![Platform](https://img.shields.io/cocoapods/p/RFFeatureToggle.svg?style=flat)](http://cocoapods.org/pods/RFFeatureToggle)
