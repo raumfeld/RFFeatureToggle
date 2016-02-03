@@ -20,11 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - FBSnapshotTestCase (2.0.7):
-    - FBSnapshotTestCase/SwiftSupport (= 2.0.7)
-  - FBSnapshotTestCase/Core (2.0.7)
-  - FBSnapshotTestCase/SwiftSupport (2.0.7):
-    - FBSnapshotTestCase/Core
+  - FBSnapshotTestCase (1.8.1)
   - OCMock (3.2.2)
   - OHHTTPStubs (4.7.0):
     - OHHTTPStubs/Default (= 4.7.0)
@@ -43,7 +39,7 @@ PODS:
     - AFNetworking (~> 2.0)
 
 DEPENDENCIES:
-  - FBSnapshotTestCase
+  - FBSnapshotTestCase (~> 1.8)
   - OCMock
   - OHHTTPStubs
   - RFFeatureToggle (from `../`)
@@ -54,9 +50,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  FBSnapshotTestCase: 7e85180d0d141a0cf472352edda7e80d7eaeb547
+  FBSnapshotTestCase: 3dc3899168747a0319c5278f5b3445c13a6532dd
   OCMock: 18c9b7e67d4c2770e95bb77a9cc1ae0c91fe3835
   OHHTTPStubs: d2bf6a0f407620d67e75a1d3f12d86a2b1dd15c0
-  RFFeatureToggle: ac6a40ae128c6510888d7d13bc72b2992695545d
+  RFFeatureToggle: 70482ee858ad588e02132c11bbea79992b1108f1
 
 COCOAPODS: 0.39.0

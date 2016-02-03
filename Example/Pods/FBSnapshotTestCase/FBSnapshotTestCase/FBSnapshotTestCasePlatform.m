@@ -9,7 +9,6 @@
  */
 
 #import <FBSnapshotTestCase/FBSnapshotTestCasePlatform.h>
-#import <UIKit/UIKit.h>
 
 BOOL FBSnapshotTestCaseIs64Bit(void)
 {
@@ -29,21 +28,4 @@ NSOrderedSet *FBSnapshotTestCaseDefaultSuffixes(void)
     return [suffixesSet reversedOrderedSet];
   } 
   return [suffixesSet copy];
-}
-
-NSString *FBDeviceAgnosticNormalizedFileName(NSString *fileName)
-{
-  UIDevice *device = [UIDevice currentDevice];
-  CGSize screenSize = [[UIApplication sharedApplication] keyWindow].bounds.size;
-  NSString *os = device.systemVersion;
-  
-  fileName = [NSString stringWithFormat:@"%@_%@%@_%.0fx%.0f", fileName, device.model, os, screenSize.width, screenSize.height];
-  
-  NSMutableCharacterSet *invalidCharacters = [NSMutableCharacterSet new];
-  [invalidCharacters formUnionWithCharacterSet:[NSCharacterSet whitespaceCharacterSet]];
-  [invalidCharacters formUnionWithCharacterSet:[NSCharacterSet punctuationCharacterSet]];
-  NSArray *validComponents = [fileName componentsSeparatedByCharactersInSet:invalidCharacters];
-  fileName = [validComponents componentsJoinedByString:@"_"];
-  
-  return fileName;
 }

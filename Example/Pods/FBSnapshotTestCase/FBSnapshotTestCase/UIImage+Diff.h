@@ -32,6 +32,6 @@
 
 @interface UIImage (Diff)
 
-- (UIImage *)fb_diffWithImage:(UIImage *)image;
+- (UIImage *)diffWithImage:(UIImage *)image;
 
 @end

@@ -28,32 +28,17 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <FBSnapshotTestCase/UIImage+Compare.h>
-
-// This makes debugging much more fun
-typedef union {
-    uint32_t raw;
-    unsigned char bytes[4];
-    struct {
-        char red;
-        char green;
-        char blue;
-        char alpha;
-    } __attribute__ ((packed)) pixels;
-} FBComparePixel;
+#import "UIImage+Compare.h"
 
 @implementation UIImage (Compare)
 
-- (BOOL)fb_compareWithImage:(UIImage *)image tolerance:(CGFloat)tolerance
+- (BOOL)compareWithImage:(UIImage *)image
 {
   NSAssert(CGSizeEqualToSize(self.size, image.size), @"Images must be same size.");
-  
-  CGSize referenceImageSize = CGSizeMake(CGImageGetWidth(self.CGImage), CGImageGetHeight(self.CGImage));
-  CGSize imageSize = CGSizeMake(CGImageGetWidth(image.CGImage), CGImageGetHeight(image.CGImage));
     
   // The images have the equal size, so we could use the smallest amount of bytes because of byte padding
   size_t minBytesPerRow = MIN(CGImageGetBytesPerRow(self.CGImage), CGImageGetBytesPerRow(image.CGImage));
-  size_t referenceImageSizeBytes = referenceImageSize.height * minBytesPerRow;
+  size_t referenceImageSizeBytes = CGImageGetHeight(self.CGImage) * minBytesPerRow;
   void *referenceImagePixels = calloc(1, referenceImageSizeBytes);
   void *imagePixels = calloc(1, referenceImageSizeBytes);
 
@@ -62,24 +47,28 @@ typedef union {
     free(imagePixels);
     return NO;
   }
-  
+    
   CGContextRef referenceImageContext = CGBitmapContextCreate(referenceImagePixels,
-                                                             referenceImageSize.width,
-                                                             referenceImageSize.height,
+                                                             CGImageGetWidth(self.CGImage),
+                                                             CGImageGetHeight(self.CGImage),
                                                              CGImageGetBitsPerComponent(self.CGImage),
                                                              minBytesPerRow,
                                                              CGImageGetColorSpace(self.CGImage),
                                                              (CGBitmapInfo)kCGImageAlphaPremultipliedLast
                                                              );
   CGContextRef imageContext = CGBitmapContextCreate(imagePixels,
-                                                    imageSize.width,
-                                                    imageSize.height,
+                                                    CGImageGetWidth(image.CGImage),
+                                                    CGImageGetHeight(image.CGImage),
                                                     CGImageGetBitsPerComponent(image.CGImage),
                                                     minBytesPerRow,
                                                     CGImageGetColorSpace(image.CGImage),
                                                     (CGBitmapInfo)kCGImageAlphaPremultipliedLast
                                                     );
-
+    
+  CGFloat scaleFactor = [[UIScreen mainScreen] scale];
+  CGContextScaleCTM(referenceImageContext, scaleFactor, scaleFactor);
+  CGContextScaleCTM(imageContext, scaleFactor, scaleFactor);
+    
   if (!referenceImageContext || !imageContext) {
     CGContextRelease(referenceImageContext);
     CGContextRelease(imageContext);
@@ -87,47 +76,15 @@ typedef union {
     free(imagePixels);
     return NO;
   }
-
-  CGContextDrawImage(referenceImageContext, CGRectMake(0, 0, referenceImageSize.width, referenceImageSize.height), self.CGImage);
-  CGContextDrawImage(imageContext, CGRectMake(0, 0, imageSize.width, imageSize.height), image.CGImage);
-
+    
+  CGContextDrawImage(referenceImageContext, CGRectMake(0, 0, self.size.width, self.size.height), self.CGImage);
+  CGContextDrawImage(imageContext, CGRectMake(0, 0, image.size.width, image.size.height), image.CGImage);
   CGContextRelease(referenceImageContext);
   CGContextRelease(imageContext);
-
-  BOOL imageEqual = YES;
-
-  // Do a fast compare if we can
-  if (tolerance == 0) {
-    imageEqual = (memcmp(referenceImagePixels, imagePixels, referenceImageSizeBytes) == 0);
-  } else {
-    // Go through each pixel in turn and see if it is different
-    const NSInteger pixelCount = referenceImageSize.width * referenceImageSize.height;
-
-    FBComparePixel *p1 = referenceImagePixels;
-    FBComparePixel *p2 = imagePixels;
-
-    NSInteger numDiffPixels = 0;
-    for (int n = 0; n < pixelCount; ++n) {
-      // If this pixel is different, increment the pixel diff count and see
-      // if we have hit our limit.
-      if (p1->raw != p2->raw) {
-        numDiffPixels ++;
-
-        CGFloat percent = (CGFloat)numDiffPixels / pixelCount;
-        if (percent > tolerance) {
-          imageEqual = NO;
-          break;
-        }
-      }
-
-      p1++;
-      p2++;
-    }
-  }
-
+    
+  BOOL imageEqual = (memcmp(referenceImagePixels, imagePixels, referenceImageSizeBytes) == 0);
   free(referenceImagePixels);
   free(imagePixels);
-
   return imageEqual;
 }
 

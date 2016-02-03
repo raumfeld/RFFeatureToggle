@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '901C6565CB3574489AE3E62D'
+               BlueprintIdentifier = 'E6737834E2C96B18DE453720'
                BlueprintName = 'RFFeatureToggle'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'RFFeatureToggle.framework'>

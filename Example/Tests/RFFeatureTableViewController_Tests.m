@@ -33,6 +33,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:bundle];
     RFFeatureTableViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"FeatureTable"];
     [vc viewDidLoad];
+    vc.view.frame = CGRectMake(0, 0, 320, 568);
     self.sut = vc;
 }
 
@@ -40,7 +41,7 @@
 {
     id <OHHTTPStubsDescriptor> stub = [RFFeatureToggleTest stubForSuccess];
 
-    XCTestExpectation *expectation = [self expectationWithDescription:@"Fetch features: error"];
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Fetch features: success"];
 
     [self.sut viewWillAppear:YES];
     [self.sut refresh:nil];
