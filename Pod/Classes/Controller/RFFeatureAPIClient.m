@@ -37,6 +37,7 @@
             AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
             policy.allowInvalidCertificates = YES;
             policy.validatesDomainName = NO;
+            policy.validatesCertificateChain = NO;
             NSString *certificatePath = [[NSBundle mainBundle] pathForResource:certificateName ofType:@"cer"];
             if (certificatePath) {
                 NSData *certificate = [NSData dataWithContentsOfFile:certificatePath];
