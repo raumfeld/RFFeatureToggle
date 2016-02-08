@@ -134,6 +134,10 @@ it, simply add the following line to your Podfile:
 pod "RFFeatureToggle"
 ```
 
+## Documentation
+
+For a complete documentation see [CococaDocs](http://cocoadocs.org/docsets/RFFeatureToggle).
+
 ## License
 
 RFFeatureToggle is available under the MIT license. See the LICENSE file for more info.
