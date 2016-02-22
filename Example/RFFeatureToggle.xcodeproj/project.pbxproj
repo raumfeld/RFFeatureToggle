@@ -25,6 +25,8 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		CF3E15951C512E18000A808C /* RFFetureToggle_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3E15941C512E18000A808C /* RFFetureToggle_Tests.m */; };
+		CF8E2E8C1C7B453500862A53 /* google.com.cer in Resources */ = {isa = PBXBuildFile; fileRef = CF8E2E8B1C7B453500862A53 /* google.com.cer */; };
+		CF8E2E901C7B483F00862A53 /* RFTestingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8E2E8F1C7B483F00862A53 /* RFTestingAppDelegate.m */; };
 		CFBADEAE1C480B8600E7F6C2 /* RFFeature_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF57C1EE1C48046F0084104A /* RFFeature_Tests.m */; };
 		CFBADEB51C496A2200E7F6C2 /* RFFeatureTableViewController_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBADEB41C496A2200E7F6C2 /* RFFeatureTableViewController_Tests.m */; };
 		CFBADEB71C496A3E00E7F6C2 /* RFFeatureAPIClient_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBADEB61C496A3E00E7F6C2 /* RFFeatureAPIClient_Tests.m */; };
@@ -75,6 +77,9 @@
 		B2D9DC3FD529E4CC65F7CF04 /* Pods-RFFeatureToggle_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RFFeatureToggle_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-RFFeatureToggle_Example/Pods-RFFeatureToggle_Example.release.xcconfig"; sourceTree = "<group>"; };
 		CF3E15941C512E18000A808C /* RFFetureToggle_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFFetureToggle_Tests.m; sourceTree = "<group>"; };
 		CF57C1EE1C48046F0084104A /* RFFeature_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFFeature_Tests.m; sourceTree = "<group>"; };
+		CF8E2E8B1C7B453500862A53 /* google.com.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = google.com.cer; sourceTree = "<group>"; };
+		CF8E2E8E1C7B483F00862A53 /* RFTestingAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFTestingAppDelegate.h; sourceTree = "<group>"; };
+		CF8E2E8F1C7B483F00862A53 /* RFTestingAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFTestingAppDelegate.m; sourceTree = "<group>"; };
 		CFBADEB41C496A2200E7F6C2 /* RFFeatureTableViewController_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFFeatureTableViewController_Tests.m; sourceTree = "<group>"; };
 		CFBADEB61C496A3E00E7F6C2 /* RFFeatureAPIClient_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFFeatureAPIClient_Tests.m; sourceTree = "<group>"; };
 		CFBADEBA1C496A6400E7F6C2 /* response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = response.json; sourceTree = "<group>"; };
@@ -154,8 +159,11 @@
 		6003F593195388D20070C39A /* Example for RFFeatureToggle */ = {
 			isa = PBXGroup;
 			children = (
+				CF8E2E8B1C7B453500862A53 /* google.com.cer */,
 				6003F59C195388D20070C39A /* RFAppDelegate.h */,
 				6003F59D195388D20070C39A /* RFAppDelegate.m */,
+				CF8E2E8E1C7B483F00862A53 /* RFTestingAppDelegate.h */,
+				CF8E2E8F1C7B483F00862A53 /* RFTestingAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -272,7 +280,12 @@
 			attributes = {
 				CLASSPREFIX = RF;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = "Dunja Lalic";
+				ORGANIZATIONNAME = "Raumfeld";
+				TargetAttributes = {
+					6003F5AD195388D20070C39A = {
+						TestTargetID = 6003F589195388D20070C39A;
+					};
+				};
 			};
 			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "RFFeatureToggle" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -298,6 +311,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF8E2E8C1C7B453500862A53 /* google.com.cer in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
@@ -416,6 +430,7 @@
 			files = (
 				6003F59E195388D20070C39A /* RFAppDelegate.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				CF8E2E901C7B483F00862A53 /* RFTestingAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +603,7 @@
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RFFeatureToggle_Example.app/RFFeatureToggle_Example";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -606,6 +622,7 @@
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RFFeatureToggle_Example.app/RFFeatureToggle_Example";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;

@@ -21,8 +21,6 @@ typedef NS_ENUM (NSUInteger, RFFeatureToggleMode)
 extern NSString *const kRFFeatureToggleBaseURLStringForStagingKey;
 extern NSString *const kRFFeatureToggleBaseURLStringForProductionKey;
 extern NSString *const kRFFeatureToggleAPIEndpointKey;
-extern NSString *const kRFFeatureToggleCertificateNameKey;
-extern NSString *const kRFFeatureToggleRequestHeadersDictionaryKey;
 
 /**
  Notification name to observe.
@@ -50,20 +48,6 @@ extern NSString *const RFFeatureToggleUpdatedNotification;
  API endpoint. Defaults to "features.json" if not provided on initialization in ´kRFFeatureToggleAPIEndpointKey´
  */
 @property (nonatomic, readonly) NSString *endpoint;
-
-/**
- Optional, a name of the certificate file, provided on initialization in `kRFFeatureToggleCertificateNameKey`
- The certificate file needs to be included in the bundle.
- The certificate needs to have .cer extension, and needs to be in DER format.
- To convert a .crt file, use the following command line:
- openssl x509 -in domain.crt -out domain.cer -outform der
- */
-@property (nonatomic, copy, readonly) NSString *certificateName;
-
-/**
- Optional, stores a request headers dictionary provided on initialization in `kRFFeatureToggleRequestHeadersDictionaryKey`
- */
-@property (nonatomic, strong, readonly) NSDictionary *requestHeadersDictionary;
 
 /**
    Refresh time interval

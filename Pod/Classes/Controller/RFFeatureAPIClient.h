@@ -26,4 +26,17 @@ typedef void (^RFAPIResultBlock)(BOOL succeeded, NSError *error);
  */
 + (instancetype)sharedClient;
 
+/**
+   Attaches values for HTTP header keys.
+   @param A dictionary of values and keys
+ */
++ (void)attachHeaderValues:(NSDictionary *)dict;
+
+/**
+   Pins a certificate
+   @param certificateName A name of the certificate file. The certificate file needs to be included in the bundle.
+   The certificate needs to have .cer extension, and needs to be in DER format. To convert a .crt file, use the following command line: openssl x509 -in domain.crt -out domain.cer -outform der
+ */
++ (void)pinCertificateWithName:(NSString *)certificateName;
+
 @end

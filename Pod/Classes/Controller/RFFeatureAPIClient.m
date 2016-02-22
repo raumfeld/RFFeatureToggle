@@ -31,35 +31,41 @@
     self = [super initWithBaseURL:url];
     if (self)
     {
-        NSString *certificateName = [RFFeatureToggleDefaults sharedDefaults].certificateName;
-        
-        if (certificateName) {
-            AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
-            policy.allowInvalidCertificates = YES;
-            policy.validatesDomainName = NO;
-            policy.validatesCertificateChain = NO;
-            NSString *certificatePath = [[NSBundle mainBundle] pathForResource:certificateName ofType:@"cer"];
-            if (certificatePath) {
-                NSData *certificate = [NSData dataWithContentsOfFile:certificatePath];
-                policy.pinnedCertificates = @[certificate];
-            }
-            self.securityPolicy = policy;
-        }
-        
         self.responseSerializer = [AFJSONResponseSerializer serializer];
         self.requestSerializer = [AFJSONRequestSerializer serializer];
-        [self attachHeaderValues];
     }
     return self;
 }
 
-- (void)attachHeaderValues
++ (void)attachHeaderValues:(NSDictionary *)dict
 {
-    NSDictionary *dict = [RFFeatureToggleDefaults sharedDefaults].requestHeadersDictionary;
     for (NSString *key in dict.allKeys)
     {
-        [self.requestSerializer setValue:[dict valueForKey:key] forHTTPHeaderField:key];
+        [[RFFeatureAPIClient sharedClient].requestSerializer setValue:[dict valueForKey:key] forHTTPHeaderField:key];
     }
+}
+
++ (void)pinCertificateWithName:(NSString *)certificateName
+{
+    AFSecurityPolicy *policy = nil;
+    
+    NSString *certificatePath = [[NSBundle mainBundle] pathForResource:certificateName ofType:@"cer"];
+    if (certificateName && certificatePath)
+    {
+        NSData *certificate = [NSData dataWithContentsOfFile:certificatePath];
+        
+        policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+        policy.allowInvalidCertificates = YES;
+        policy.validatesDomainName = NO;
+        policy.validatesCertificateChain = NO;
+        policy.pinnedCertificates = @[certificate];
+    }
+    else
+    {
+        policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+    }
+    
+    [RFFeatureAPIClient sharedClient].securityPolicy = policy;
 }
 
 @end

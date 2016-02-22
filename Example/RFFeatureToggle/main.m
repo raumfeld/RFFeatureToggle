@@ -9,9 +9,12 @@
 @import UIKit;
 #import "RFAppDelegate.h"
 
-int main(int argc, char * argv[])
+int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([RFAppDelegate class]));
+        Class appDelegateClass = NSClassFromString(@"RFTestingAppDelegate");
+        if (!appDelegateClass)
+            appDelegateClass = [RFAppDelegate class];
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass(appDelegateClass));
     }
 }
