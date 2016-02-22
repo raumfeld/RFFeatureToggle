@@ -21,6 +21,7 @@ typedef NS_ENUM (NSUInteger, RFFeatureToggleMode)
 extern NSString *const kRFFeatureToggleBaseURLStringForStagingKey;
 extern NSString *const kRFFeatureToggleBaseURLStringForProductionKey;
 extern NSString *const kRFFeatureToggleAPIEndpointKey;
+extern NSString *const kRFFeatureToggleRequestHeadersDictionaryKey;
 
 /**
  Notification name to observe.
@@ -48,6 +49,11 @@ extern NSString *const RFFeatureToggleUpdatedNotification;
  API endpoint. Defaults to "features.json" if not provided on initialization in ´kRFFeatureToggleAPIEndpointKey´
  */
 @property (nonatomic, readonly) NSString *endpoint;
+
+/**
+ Optional, stores a request headers dictionary provided on initialization in `kRFFeatureToggleRequestHeadersDictionaryKey`
+ */
+@property (nonatomic, strong, readonly) NSDictionary *requestHeadersDictionary;
 
 /**
    Refresh time interval

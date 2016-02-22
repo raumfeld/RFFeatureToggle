@@ -33,6 +33,9 @@
     {
         self.responseSerializer = [AFJSONResponseSerializer serializer];
         self.requestSerializer = [AFJSONRequestSerializer serializer];
+        
+        NSDictionary *dict = [RFFeatureToggleDefaults sharedDefaults].requestHeadersDictionary;
+        [RFFeatureAPIClient attachHeaderValues:dict];
     }
     return self;
 }

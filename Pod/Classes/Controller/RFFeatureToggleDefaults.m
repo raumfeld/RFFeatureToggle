@@ -12,6 +12,7 @@
 NSString *const kRFFeatureToggleBaseURLStringForStagingKey = @"kRFFeatureToggleBaseURLStringForStagingKey";
 NSString *const kRFFeatureToggleBaseURLStringForProductionKey = @"kRFFeatureToggleBaseURLStringForProductionKey";
 NSString *const kRFFeatureToggleAPIEndpointKey = @"kRFFeatureToggleAPIEndpointKey";
+NSString *const kRFFeatureToggleRequestHeadersDictionaryKey = @"kRFFeatureToggleHeaderDictionaryKey";
 
 NSString *const RFFeatureToggleUpdatedNotification = @"RFFeatureToggleUpdatedNotification";
 
@@ -63,6 +64,8 @@ static RFFeatureToggleDefaults *sharedDefaults = nil;
         {
             _endpoint = @"features.json";
         }
+        
+        _requestHeadersDictionary = params[kRFFeatureToggleRequestHeadersDictionaryKey];
         
         self.refreshTimeInterval = 24*60*60;
 
