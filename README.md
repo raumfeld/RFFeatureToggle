@@ -57,16 +57,12 @@ NSArray *features = [RFeatureToggle allFeatures];
 
 Subscribe to `RFFeatureToggleUpdatedNotification` to receive updates. The notification is triggered only when there has been a change in features.
 
-### Changing base URL
+### Switching between modes
 
-Base URL can be changed dynamically. By assigning different URL, `[RFFeatureToggleDefaults sharedDefaults].mode` will return the mode it's operating in (production, staging, custom).
+To switch between staging and production use `[RFFeatureToggleDefaults switchToMode:RFFeatureToggleModeProduction]`. Alternatively, to switch to custom URL that was not provided on initialization, there's a convenience method `[RFFeatureToggleDefaults switchToCustomModeWithBaseURLString:@"https://testURL"]`. Calling `[RFFeatureToggleDefaults sharedDefaults].mode)]` will return the mode it's operating in (production, staging, custom).
 
 ### Fine tuning
-For fine tuning check properties in `RFFeatureToggleDefaults`, which are further explained in the documentation:
-
-* **certificateName**
-* **requestHeadersDictionary**
-* **refreshTimeInterval**
+For fine tuning check the [CococaDocs](http://cocoadocs.org/docsets/RFFeatureToggle). 
 
 ### Inspection
 To inspect the features, there are convenience methods in `RFFeature` class:
