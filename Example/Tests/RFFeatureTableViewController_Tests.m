@@ -94,6 +94,25 @@
     [OHHTTPStubs removeStub:stub];
 }
 
+- (void)testAlertViewIsShown
+{
+    id mockAlertView = [OCMockObject mockForClass:[UIAlertView class]];
+    [[[mockAlertView stub] andReturn:mockAlertView] alloc];
+    (void)[[[mockAlertView expect] andReturn:mockAlertView]
+           initWithTitle:NSLocalizedString(@"An error occurred", @"Error message title")
+           message:@"Test error description"
+           delegate:OCMOCK_ANY
+           cancelButtonTitle:NSLocalizedString(@"OK", @"")
+           otherButtonTitles:OCMOCK_ANY, nil];
+    [[mockAlertView expect] show];
+    
+    NSError *error = [NSError errorWithDomain:@"TestDomain" code:404 userInfo:@{NSLocalizedDescriptionKey:@"Test error description"}];
+    [self.sut handleError:error];
+    
+    [mockAlertView verify];
+    [mockAlertView stopMocking];
+}
+
 - (void)testPushSubfeaturesTableView
 {
     id sutMock = OCMPartialMock(self.sut);

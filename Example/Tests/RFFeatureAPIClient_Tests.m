@@ -18,7 +18,8 @@
 - (void)setUp
 {
     NSDictionary *params = @{kRFFeatureToggleBaseURLStringForStagingKey : @"https://staging/",
-                             kRFFeatureToggleBaseURLStringForProductionKey : @"https://production/"};
+                             kRFFeatureToggleBaseURLStringForProductionKey : @"https://production/",
+                             kRFFeatureToggleAPIEndpointKey : @"test"};
     [RFFeatureToggleDefaults sharedDefaultsWithMode:RFFeatureToggleModeStaging params:params];
 }
 
@@ -31,6 +32,11 @@
 - (void)testBaseURL
 {
     XCTAssertTrue([[RFFeatureToggleDefaults sharedDefaults].baseURLString isEqualToString:@"https://staging/"],@"Base URL should be 'https://staging/'");
+}
+
+- (void)testAPIEndpoint
+{
+    XCTAssertTrue([[RFFeatureToggleDefaults sharedDefaults].endpoint isEqualToString:@"test"],@"Endpoint should be 'test'");
 }
 
 - (void)testPinningCertificate
