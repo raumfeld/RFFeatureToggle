@@ -59,7 +59,19 @@ Subscribe to `RFFeatureToggleUpdatedNotification` to receive updates. The notifi
 
 ### Switching between modes
 
-To switch between staging and production use `[RFFeatureToggleDefaults switchToMode:RFFeatureToggleModeProduction]`. Alternatively, to switch to custom URL that was not provided on initialization, there's a convenience method `[RFFeatureToggleDefaults switchToCustomModeWithBaseURLString:@"https://testURL"]`. Calling `[RFFeatureToggleDefaults sharedDefaults].mode)]` will return the mode it's operating in (production, staging, custom).
+To switch between staging and production use
+
+```objective-c
+[RFFeatureToggleDefaults switchToMode:RFFeatureToggleModeProduction]
+```
+
+Alternatively, to switch to custom URL that was not provided on initialization, there's a convenience method
+
+```objective-c
+[RFFeatureToggleDefaults switchToCustomModeWithBaseURLString:@"https://testURL"]
+```
+
+Calling `[RFFeatureToggleDefaults sharedDefaults].mode)]` will return the mode it's operating in (production, staging, custom).
 
 ### Fine tuning
 For fine tuning check the [CococaDocs](http://cocoadocs.org/docsets/RFFeatureToggle). 
