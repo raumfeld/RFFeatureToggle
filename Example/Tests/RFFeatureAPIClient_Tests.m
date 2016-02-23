@@ -60,7 +60,7 @@
 
 - (void)testHeadersAreAttached
 {
-    [RFFeatureAPIClient attachHeaderValues:[self testHeaders]];
+    [[RFFeatureAPIClient sharedClient] attachHeaderValues:[self testHeaders]];
     
     XCTAssertEqual([RFFeatureAPIClient sharedClient].requestSerializer.HTTPRequestHeaders[@"key1"],@"value1",@"Headers should contain 'value1' for 'key1'");
     XCTAssertEqual([RFFeatureAPIClient sharedClient].requestSerializer.HTTPRequestHeaders[@"key2"],@"value2",@"Headers should contain 'value2' for 'key2'");

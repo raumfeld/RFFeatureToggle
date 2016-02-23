@@ -36,16 +36,16 @@
         self.requestSerializer = [AFJSONRequestSerializer serializer];
         
         NSDictionary *dict = [RFFeatureToggleDefaults sharedDefaults].requestHeadersDictionary;
-        [RFFeatureAPIClient attachHeaderValues:dict];
+        [self attachHeaderValues:dict];
     }
     return self;
 }
 
-+ (void)attachHeaderValues:(NSDictionary *)dict
+- (void)attachHeaderValues:(NSDictionary *)dict
 {
     for (NSString *key in dict.allKeys)
     {
-        [[RFFeatureAPIClient sharedClient].requestSerializer setValue:[dict valueForKey:key] forHTTPHeaderField:key];
+        [self.requestSerializer setValue:[dict valueForKey:key] forHTTPHeaderField:key];
     }
 }
 

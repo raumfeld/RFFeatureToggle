@@ -20,7 +20,7 @@ typedef void (^RFAPIResultBlock)(BOOL succeeded, NSError *error);
 @interface RFFeatureAPIClient : AFHTTPSessionManager
 
 /**
-   Initializes and returns a singleton instance of `RFFeatureAPIClient` with empty base URL (so it can be switched dynamically). The certificate & header fields are based on values in `RFFeatureToggleDefaults`.
+   Initializes and returns a singleton instance of `RFFeatureAPIClient` with empty base URL (so it can be switched dynamically).
 
    @return    The shared `RFFeatureToggleDefaults` instance.
  */
@@ -28,9 +28,9 @@ typedef void (^RFAPIResultBlock)(BOOL succeeded, NSError *error);
 
 /**
    Attaches values for HTTP header keys.
-   @param A dictionary of values and keys
+   @param dict A dictionary of values and keys
  */
-+ (void)attachHeaderValues:(NSDictionary *)dict;
+- (void)attachHeaderValues:(NSDictionary *)dict;
 
 /**
    Pins a certificate
