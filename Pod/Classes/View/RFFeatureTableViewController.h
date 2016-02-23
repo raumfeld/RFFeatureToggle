@@ -6,7 +6,7 @@
 //  Copyright (c) 2016 Raumfeld. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 @class RFFeature;
 
 /**
