@@ -8,6 +8,7 @@
 
 #import "RFFeatureAPIClient.h"
 #import "RFFeatureToggleDefaults.h"
+#import "RFFeatureToggleLogging.h"
 
 @interface RFFeatureAPIClient ()
 
@@ -62,6 +63,10 @@
         policy.validatesDomainName = NO;
         policy.validatesCertificateChain = NO;
         policy.pinnedCertificates = @[certificate];
+    }
+    else if (certificateName && !certificatePath)
+    {
+        RFLogError(@"Error: Certificate with name %@ not found.",certificateName);
     }
     else
     {

@@ -10,6 +10,7 @@
 #import "RFFeature+Mapping.h"
 #import "RFFeatureToggleDefaults.h"
 #import "RFFeatureCache.h"
+#import "RFFeatureToggleLogging.h"
 
 @implementation RFFeature (API)
 
@@ -19,11 +20,13 @@
     [[RFFeatureAPIClient sharedClient] GET:url
                                 parameters:nil
                                    success:^(NSURLSessionDataTask *__unused task, id JSON) {
+                                       RFLogDebug(@"Request to '%@' returned:\n%@",url,JSON);
                                        NSArray *objects = [RFFeature objectsFromJSON:JSON];
                                        [RFFeatureCache persistFeatures:objects];
                                        return block(YES, nil);
                                    }
                                    failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
+                                       RFLogError(@"Error: request to '%@' returned:\n%@",url,error);
                                        return block(NO, error);
                                    }];
 }
