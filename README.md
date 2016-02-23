@@ -127,6 +127,25 @@ if	(secondsSinceLastSuccessfulUpdate > 120.0f)
 	//do something
 }
 ```
+## Logging
+
+Logging can be configured by calling `[RFFeatureToggle setLoggingLevel:];` using one of the predefined logging levels:
+
+- **RFFeatureToggleLogLevelOff**: Don't log anything
+- **RFFeatureToggleLoggingLevelError**: Log all errors
+- **RFFeatureToggleLoggingLevelWarn**: Log warnings and errors
+- **RFFeatureToggleLoggingLevelInfo**: Log informative, warning and error messages
+- **RFFeatureToggleLoggingLevelDebug**: Log all debug, informative, warning and error messages
+- **RFFeatureToggleLoggingLevelVerbose**: Log verbose diagnostic, informative, warning and error messages
+
+### CocoaLumberjack
+
+If it's available, RFFeatureToggle will direct its logs to [CocoaLumberjack](https://github.com/CocoaLumberjack/CocoaLumberjack). All you need to do is make sure you've imported CocoaLumberjack before you import RFFeatureToggle, like so:
+
+```objective-c
+#import <CocoaLumberjack/CocoaLumberjack.h>
+#import <RFFeatureToggle/RFFeatureToggle.h>
+```
 
 ## Requirements
 
