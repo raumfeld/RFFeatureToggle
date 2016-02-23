@@ -7,7 +7,15 @@
 //
 
 #import "RFTestingAppDelegate.h"
+#import "RFFeatureToggle.h"
 
 @implementation RFTestingAppDelegate
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [RFFeatureToggle setLoggingLevel:RFFeatureToggleLoggingLevelOff];
+    
+    return YES;
+}
 
 @end

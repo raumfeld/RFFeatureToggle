@@ -10,6 +10,12 @@
 #import "RFFeatureCache.h"
 #import "RFFeature+API.h"
 
+#ifdef DEBUG
+static RFFeatureToggleLoggingLevel kRFFeatureToggleLoggingLevel = RFFeatureToggleLoggingLevelDebug;
+#else
+static RFFeatureToggleLoggingLevel kRFFeatureToggleLoggingLevel = RFFeatureToggleLoggingLevelError;
+#endif
+
 @implementation RFFeatureToggle
 
 + (BOOL)isEnabled:(NSString *)featureName
@@ -25,6 +31,16 @@
 + (NSArray *)allFeatures
 {
     return [RFFeatureCache allFeatures];
+}
+
++ (RFFeatureToggleLoggingLevel) loggingLevel
+{
+    return kRFFeatureToggleLoggingLevel;
+}
+
++ (void) setLoggingLevel:(RFFeatureToggleLoggingLevel)level
+{
+    kRFFeatureToggleLoggingLevel = level;
 }
 
 @end

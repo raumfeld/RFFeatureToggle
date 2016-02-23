@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		02C2D31E2373E11E891780FFBB8D3F70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B376412847162E2D54512E4124CFA20A /* Foundation.framework */; };
 		03F5EE857E2BAF72AB6BEBE8C08F477E /* OCMNotificationPoster.m in Sources */ = {isa = PBXBuildFile; fileRef = 4219DB5A61758191BC23043CAE729F10 /* OCMNotificationPoster.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		057C76D440FA512B24049317272D8522 /* RFFeature+Mapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9CEEFF3E1DB9E11B0D14FDE88E07CA /* RFFeature+Mapping.m */; };
+		057C76D440FA512B24049317272D8522 /* RFFeature+Mapping.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5669654A7C7C9D578F85306C43F482 /* RFFeature+Mapping.m */; };
 		0728CAD93F65BD458DBDFBACD87E45A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B376412847162E2D54512E4124CFA20A /* Foundation.framework */; };
 		095B89602B5DE76A5F1025DD430AF416 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C937A807DBEFD9B3918CDC967189AE /* AFURLRequestSerialization.m */; };
 		09B4B2BDCC08F7681EC73BA52872E2C4 /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 73435BA07016648B7DD652204E679F1B /* AFURLConnectionOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AC63A4E1C49A08DF0038A2CB578AEF9 /* OCMRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BDF428A4215749015798C9E4495D85 /* OCMRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0ADDBF7E858A4D4AED7A6899B41D2104 /* RFFeature.h in Headers */ = {isa = PBXBuildFile; fileRef = AC4764E2CD4BF8E86FEFF8C512EE2210 /* RFFeature.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10233B7FA93750436DD1B30401BD58A6 /* RFFeatureTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4006500DDB9CC361C1F0A0F5900A1DB3 /* RFFeatureTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		10D1E5C8C3036A5BDA57036CF5F37877 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B376412847162E2D54512E4124CFA20A /* Foundation.framework */; };
 		120BAF36586D11C40F0CE449296FC95D /* Pods-RFFeatureToggle_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A633C06357F9616A538BE5DAEBDB1FD /* Pods-RFFeatureToggle_Tests-dummy.m */; };
 		12D2F7AA45E613F050F3BF2F39BBA47B /* OHHTTPStubsResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = E065D89415D2446DE417455E5CC04773 /* OHHTTPStubsResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,17 +29,17 @@
 		1E2A24A52433917446348A64D586073D /* OCMBlockCaller.m in Sources */ = {isa = PBXBuildFile; fileRef = F97D1B9056A536943E1FFD1DEF3B1417 /* OCMBlockCaller.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1E730412C72AE00CC0A51163C45F04F2 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C24A2F732F777830A54462F16C192AB7 /* AFNetworkActivityIndicatorManager.m */; };
 		1F4D5DB6CB3F389BEB36A2835B94C6D5 /* OCMock.h in Headers */ = {isa = PBXBuildFile; fileRef = F554AB310FB17072FFFA758FBD8F7B41 /* OCMock.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		20141E71CCD235D9C53E965E264DF9D3 /* RFFeature.h in Headers */ = {isa = PBXBuildFile; fileRef = F9D57E04FD8FD085ACB6B0C22433A69B /* RFFeature.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		20DAC8FC0425FC3C67C5DB7FBBD292B5 /* RFFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B294FBF0092836E13F9A14245494ACD /* RFFeature.m */; };
+		20DAC8FC0425FC3C67C5DB7FBBD292B5 /* RFFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = 6158AA53219C91CB56E2425DEA297A7A /* RFFeature.m */; };
 		21C2038CA0F518BA7017AE027B02FC24 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DA2933C4DF9F3085E1FCDF5429D5455 /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22E9CA659D249F9DC738B8CFE60ABDDC /* RFFeatureCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B0E32B8090A3954E09802235BF4C9DB /* RFFeatureCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		269BB42075CDB963DAA59664F3ECD0E6 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E5E95140C68D3B6F3B283230CCA0408 /* AFNetworking.framework */; };
 		28C418C22F745882D869A7970192D116 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B376412847162E2D54512E4124CFA20A /* Foundation.framework */; };
-		28FA63A45216DEE93EA260F4D3E78044 /* RFFeature+API.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DC6931066BE1F503F44EC5B3F09F6 /* RFFeature+API.m */; };
-		2A0BE72DD68C9AA32730FD7C19C0B915 /* RFFeatureTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCC720C28C81640CE5E40289C4AF57B /* RFFeatureTableViewController.m */; };
+		28FA63A45216DEE93EA260F4D3E78044 /* RFFeature+API.m in Sources */ = {isa = PBXBuildFile; fileRef = C276B5B598E4D0D1A366249A29A6311D /* RFFeature+API.m */; };
+		2A0BE72DD68C9AA32730FD7C19C0B915 /* RFFeatureTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA201026D20DD799BC37DCECD4FA09B8 /* RFFeatureTableViewController.m */; };
 		2A8173E720F12D5F9CCD6001D0228D2D /* OCMArgAction.m in Sources */ = {isa = PBXBuildFile; fileRef = AE50860F766122E386A114B8C392B06A /* OCMArgAction.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2ADADEC378A839F5AE006E3523EC265F /* OCPartialMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 78F67E6AEF2B4A7420B966CC8F6CA7A2 /* OCPartialMockObject.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		2D125712F3D241F8D8C1A9B7EE0478C6 /* OCMInvocationExpectation.h in Headers */ = {isa = PBXBuildFile; fileRef = 118951B94A3528558C4BFB93484C600E /* OCMInvocationExpectation.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		2D977547CCD1AEB9C3F63E39335C76E5 /* RFFeatureToggleDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A0D85498810C1ABD3DD32FE44D78D /* RFFeatureToggleDefaults.m */; };
+		2D977547CCD1AEB9C3F63E39335C76E5 /* RFFeatureToggleDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D07C153E0FB7192191BD3A503C3199 /* RFFeatureToggleDefaults.m */; };
 		3102C905CBDEABEFCB2D034D63BE53C1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC65037F6866CA47204CC82290295A8D /* CoreGraphics.framework */; };
 		3136D68C4161EE86291CD417CE68250B /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B08C94AAA874043C7EFB862F3967BB /* AFURLSessionManager.m */; };
 		32A37F915C086BEB792CDCDC923B7470 /* FBSnapshotTestCasePlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = C12F2259A35BEFDBF912CC4814DB1A72 /* FBSnapshotTestCasePlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -47,17 +49,19 @@
 		343147059500A5014E37AA693E88D1EB /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BCD11629B6271F12A12941504D138E /* AFHTTPRequestOperation.m */; };
 		346B6D672C01EE3DD8EE16B04229F183 /* OCMRealObjectForwarder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2777806A8D1AAD1BF25A12751F72488A /* OCMRealObjectForwarder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		387B673926C97011BC576EC8064530A6 /* OHHTTPStubs-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D151D064E867E2321128AB8820C6B34 /* OHHTTPStubs-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3EBA5325A30F55C16A2EF262C854A225 /* RFFeatureToggle.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CB33628BFCCC35073A5B98C8B8C4DE8 /* RFFeatureToggle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4009ACE12B02A78F3ABFC9F67FFD8204 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B376412847162E2D54512E4124CFA20A /* Foundation.framework */; };
 		409435B4AEA9DC5CD528509299026001 /* OCMObserverRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = E89B2A027DE2F1B6729D583BAD93F6C8 /* OCMObserverRecorder.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		416C2DD9E7038656F7A4281A2EFF699B /* OCPartialMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BBD690CC1180CC260550FF7C0FAC2ED /* OCPartialMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		41817FEA953DA30BF98EC7A45392416A /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = F41D47B9A3755517C16FD0CE03897B3B /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42498CF985FE0CE9DD90DD683266CC18 /* OCMInvocationExpectation.m in Sources */ = {isa = PBXBuildFile; fileRef = FE57CB91BCC5AC83F230FE0532FE0030 /* OCMInvocationExpectation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		456A12406CCC604FBB3B78F41BEF7C94 /* RFFeatureAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C25F54FC4E460FAA9021960985634F /* RFFeatureAPIClient.m */; };
+		456A12406CCC604FBB3B78F41BEF7C94 /* RFFeatureAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F23159726C4B0F38F53712647F10612 /* RFFeatureAPIClient.m */; };
 		47FDBF77F3F3647877210032BBEB963E /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB3422F2F513D081B4D8A7BE218407 /* UIWebView+AFNetworking.m */; };
 		48DDD9BE0005FDDF9C91EBE57B03D1D4 /* OCMIndirectReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = D8DBFAD5BFE982B0844871058357E3FC /* OCMIndirectReturnValueProvider.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		4923B27AB8BB0E233B68D58A3622F4AD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70CD5FB3C19FD2709FE32445C6C5195 /* SystemConfiguration.framework */; };
 		49DB462C455568591A759157D2850B86 /* OCObserverMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = C2631BED7BAB894F2A75AA242DB1A88C /* OCObserverMockObject.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		4C142D9B6B5AAA6244FFFE4585AAF83F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B376412847162E2D54512E4124CFA20A /* Foundation.framework */; };
+		4DE98F2D4F25827A4BBCE4446645F752 /* RFFeature+API.h in Headers */ = {isa = PBXBuildFile; fileRef = AFAB950D8C8FB0B26B4A05C8937611F1 /* RFFeature+API.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E91FC9241DAF2AFAC03983082025C10 /* OCMReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = D87F1FDF7AF5FFD76344FA68ACCBE933 /* OCMReturnValueProvider.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		4ECCDEF1D4BA8D11BCA5E7BBF29DC427 /* NSMethodSignature+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0F512A3C8DFD4D5896174934FD26A9 /* NSMethodSignature+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5017A2926C8E5C88171D3DFDB9F084D6 /* AFHTTPRequestOperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CC430AC4279C5A1E27EB3773E622BDC6 /* AFHTTPRequestOperationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -76,6 +80,7 @@
 		5F95FFA001F7D021C9D3D0D1262F4BD2 /* NSValue+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D7399A38A6294E4A4B336602D4E8527 /* NSValue+OCMAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		61951F55E72A85F89699527A9C69901E /* NSNotificationCenter+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A159FFE73823079BBA8F3DF3E6D852 /* NSNotificationCenter+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		623FD70CADFD4593E65178BBAD28298E /* OHHTTPStubs-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0C5E83E346D795D74B6B9AE986EB71 /* OHHTTPStubs-dummy.m */; };
+		633F4AD5210AF70AAE5B93F17CAC1163 /* RFFeatureToggle-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E973937E8B3EB63044AD1E2D28DF9314 /* RFFeatureToggle-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65BD2EAA1888CC88B8CA7E28B4F9EAEB /* OCMLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 293152512998C419A65F609C768BB95D /* OCMLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65BE72FA70CB8EBA5195FC598F0CF18D /* FBSnapshotTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = E26D59DDB6EF1FAE2F894D7BA9252FE2 /* FBSnapshotTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		667BF78849A25C80C331ABE16EF75C1F /* Pods-RFFeatureToggle_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B808A276A827731D07672311F7EBA3 /* Pods-RFFeatureToggle_Example-dummy.m */; };
@@ -101,8 +106,8 @@
 		831487B1FD9A4EAA9B5CC9F5C1797F87 /* Pods-RFFeatureToggle_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3B2F32CEA489FB345950066A2902A3 /* Pods-RFFeatureToggle_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		835EA1C6D76476F4FCB4B7A2F7E88AE5 /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DD01DCBC417D28FA11BCD11FCA4CB86 /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		843D9877A3C125A3B1EA2A8CFD442F8F /* UIImage+Diff.h in Headers */ = {isa = PBXBuildFile; fileRef = DD016F46812E341C4C595A851A3B12A5 /* UIImage+Diff.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		84D51DBB815CA667B27CE3BF46F3183C /* RFFeature+Mapping.h in Headers */ = {isa = PBXBuildFile; fileRef = DC75891AA5B53C8AEFC545B2C436E811 /* RFFeature+Mapping.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		876EDA2433FA95337E2D771F302C5203 /* OHHTTPStubs.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FB544888B80F5797B6FB2F61C2EAA22 /* OHHTTPStubs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A318C99C1D4379D52314DE898822955 /* RFFeatureToggleLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ADBD110449B2B8D484E76632B2F4400 /* RFFeatureToggleLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B8A1D2FAF3F97278FB6C323FDEF067E /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A11CCB027427E6E3CD294C1E935BFD8C /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E7F19B598B6ABC93DE13DB0F6FED67B /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDC936F74AA310311F03A7BB83A9D40 /* UIButton+AFNetworking.m */; };
 		8EF30D6EE3AD90E917AE94C151BE868D /* NSInvocation+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8B02E7D4DE0007443D89C7EB2E2D3 /* NSInvocation+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -112,7 +117,6 @@
 		9501D11D86F452C48D5E33525B5C3C35 /* OCMFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A7C4307C6483558D7D71141B1C91B7E /* OCMFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		956F50413DD2DD66325C516A1A61D300 /* AFNetworking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D06CA78DA21BD5A83C6DB8334CE4832B /* AFNetworking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C5CE2BA6E6762572E6E835EB369C57F /* UIImage+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = BBD82F42D85AFD2021B4FB446C70F5AD /* UIImage+Compare.m */; };
-		9E854257BD804CEF6001DED4F939F847 /* RFFeatureTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 58EA37067ACCA6818537B795E9BB81EB /* RFFeatureTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A15FD32B2E0287C7FB2FD553B6436AE4 /* FBSnapshotTestCasePlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = E6BF7DB9B0FD53F4D22F8C980AC9C863 /* FBSnapshotTestCasePlatform.m */; };
 		A194DEE96E5D5C9D61FD6CFCB61E91BD /* Compatibility.h in Headers */ = {isa = PBXBuildFile; fileRef = EE10F1D491DC00E197A732F40AACDE98 /* Compatibility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A29BDF77211D8A9D09C61CDBA8E8746D /* Pods-RFFeatureToggle_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F1AB2A9843265DB7BAC7BD270E66649 /* Pods-RFFeatureToggle_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -123,29 +127,26 @@
 		A6B7C730B8F621AF9EA9ED8F280C00D0 /* OCMArgAction.h in Headers */ = {isa = PBXBuildFile; fileRef = F0614BAACEBD7569B43A52416B8C12F9 /* OCMArgAction.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A6CCC994A5541AB7ADE2DA96E90CC702 /* OHPathHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = D36D6BB20DF740D5BB4E04631FF325AD /* OHPathHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A72400D26D3BE977E6A45C264AAE9740 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B376412847162E2D54512E4124CFA20A /* Foundation.framework */; };
-		A82D29862D67901A5CEA890799DFDD29 /* RFFeatureToggleDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = AA9221D0CE198C2FC7A7EECCCF6F751E /* RFFeatureToggleDefaults.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A8C187181C77CEABC83CD9CCFB387089 /* OCClassMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 73CFBCD18B4B478DF2CF5B75A99DA2E6 /* OCClassMockObject.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A95ECB5CFEB7E148CF7243F044D70C7D /* UIAlertView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = A070BCD82CD48627BD084D2544D40C19 /* UIAlertView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA29D6EF9537E1DD8DF16AD0B20BC3D0 /* OCMFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 08074864C84BC6D4EC8753BA152E4DB3 /* OCMFunctions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AAAC712F6198BB176F2C3AC396C7AB76 /* NSInvocation+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EB795130F6A97C941C15245F0BEAC1E /* NSInvocation+OCMAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		AB1447453D15B58003AD64A34F5D3E3C /* RFFeatureAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = F323D1DB4607A98F864C64D89723F40D /* RFFeatureAPIClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC03A6F21ABF8A9433A1BBF7FE705496 /* RFFeatureToggleDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 266A70A26B279455EFC2D3F375FCABAA /* RFFeatureToggleDefaults.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACBA2AEA68C437312745A1F24CE9F186 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 05850695466188925B04A26397D3AA54 /* AFHTTPSessionManager.m */; };
 		AD57B6B4E875CC013EE43BF8E7895C73 /* FBSnapshotTestController.h in Headers */ = {isa = PBXBuildFile; fileRef = A44EB8C8C091BC6362DBD849DC3F9447 /* FBSnapshotTestController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ADD2FBEA7C59439D47E6C520109BE1C1 /* OCMPassByRefSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 582C8AB5DA286F4313165EA4B759C919 /* OCMPassByRefSetter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		ADFCDF29DDAEA77DE0CFF0FA54ABCD90 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DEF2202C0AD5C59F8C845D39BBA01CE /* QuartzCore.framework */; };
-		AEA66E11E6E13E9A768EB10F14E507E4 /* RFFeatureToggle-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E973937E8B3EB63044AD1E2D28DF9314 /* RFFeatureToggle-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AF3CB80363E3E03844A150D263047003 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 021230508C9644DA438DB1A957CCDFE4 /* UIWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B09D04219890A35B78F16D34F9B1212E /* UIImage+Snapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 9618A7B520C4D25508CA9015443C81D5 /* UIImage+Snapshot.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		B0CE1166586A35238256CDF1A4C588EA /* OCMRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = FAF0CD59CBEF608A957BEF13F153505D /* OCMRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4F869A84D05F56D59840B99292C6FC6 /* OCMIndirectReturnValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF7A48C74B6B6FA6157C1F32BD25E20 /* OCMIndirectReturnValueProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BAF23A78B40C32CF7054C7A15C7BF66C /* OCProtocolMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 911A896E19BAD30540ACD98D7E684504 /* OCProtocolMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		C023DF42E8E58CA8EF471588608A5AD7 /* RFFeatureCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F40E47371C91691A11404FC4960A6FF9 /* RFFeatureCache.m */; };
+		C023DF42E8E58CA8EF471588608A5AD7 /* RFFeatureCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E55E1F51C880FB66B5C02378EAC0D0F4 /* RFFeatureCache.m */; };
 		C15E3CE179CDF91796B6BCD54101A7F0 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 553FA43116D0B5DF41F2EF8438859667 /* UIProgressView+AFNetworking.m */; };
 		C331F4CD251C22970EB86DCE1DF7F794 /* OHHTTPStubsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 669B2C6525CEA68B0F75FCEB8D47875E /* OHHTTPStubsResponse.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		CA486CC72279C489774A7731058948CF /* OCMArg.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCDE2531302BE77891D44703D1F39F4 /* OCMArg.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CB098D0C8905A9AB9BF6932EF61811AB /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 76562B804480877FD930C8982B4F99D7 /* UIAlertView+AFNetworking.m */; };
 		CBF6204AA67BA84848A0FAFFDBA7668E /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F32934E5A1F0AEA3FB6EA90EF9CC71AE /* UIRefreshControl+AFNetworking.m */; };
-		CDE34A3390AED2F298C936DB1BD8FA03 /* RFFeature+API.h in Headers */ = {isa = PBXBuildFile; fileRef = DBE8B2715606CA6725CCAA71E7B0B946 /* RFFeature+API.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE428442B4CB66B79BDA66A26DF1FC16 /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8662D03A234F42BB2C8462CD84D6E2 /* AFNetworking-dummy.m */; };
 		CF7C74A41A746CE32F09E3910A0AD1CD /* OCMVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E01D1BE2B0076CC12BA0408EC81750 /* OCMVerifier.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D0160D705AF4B9DFFC5CDDCD8AA03BBD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D5495AE4B3EC469725F10013642D9C8 /* UIKit.framework */; };
@@ -157,8 +158,9 @@
 		DC8ED9E1CC997428EA320567DDE4A1D2 /* OCMExceptionReturnValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 428698E8E39F589D2E7914CC8F4E57FA /* OCMExceptionReturnValueProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DCE3332BC15377F7990C2876C3831647 /* OCMInvocationMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D93500AFA26B134E05837C711EA8EDC4 /* OCMInvocationMatcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DEF2687019D8CF7B8A460439DEDF0B54 /* OCMBoxedReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = EEFA1372A6D6D7B1B5753D77BF7DE517 /* OCMBoxedReturnValueProvider.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E08FD83E1DEE3343B88A614FABFB2946 /* RFFeature+Mapping.h in Headers */ = {isa = PBXBuildFile; fileRef = 6782DF48D05F561C137B49271ACE3A12 /* RFFeature+Mapping.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E2EC03F8A7E04450C40CA6E47EFE1B7B /* OCMBlockArgCaller.h in Headers */ = {isa = PBXBuildFile; fileRef = A9AF771A2B34F33D8AAC9669B3B38F07 /* OCMBlockArgCaller.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E337FE605D9279FCEBCC43360B4BE3DF /* RFFeatureToggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 142E867D6E1F05E572AC61E8AF013D76 /* RFFeatureToggle.m */; };
+		E337FE605D9279FCEBCC43360B4BE3DF /* RFFeatureToggle.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D8FF728FF60BAEECD5AFCB3FDCB314 /* RFFeatureToggle.m */; };
 		E56F69BA14D9BF36CBDB448A56ED9B4D /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F331EC35D05C1009035CF2EF5B8EA8C /* AFURLConnectionOperation.m */; };
 		E65AE8A47CA1650E94B961F15E3C31A4 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = B408FDD150B36AD84BBC297F0267D8C5 /* AFURLResponseSerialization.m */; };
 		E8E7CCF090EC2EB4E3C29D2954D21F17 /* OHHTTPStubs.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6E067FA88BC0F45FEC8EAEF4566537 /* OHHTTPStubs.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
@@ -168,6 +170,7 @@
 		EBA47725933A76A885B84EE874FBC421 /* OCObserverMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F303D487BDBC84C355743DA75EA5135E /* OCObserverMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EE4390AA2DA83D5BCC44952F3B004697 /* OCMBoxedReturnValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 14300F9172E0A406D7F8172702C2E9BF /* OCMBoxedReturnValueProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EE5BD2DC2B7A496FA4B14725460CBE8A /* UIImage+Diff.m in Sources */ = {isa = PBXBuildFile; fileRef = D429C89E4132CA4B3BDA2B4ED2AF8962 /* UIImage+Diff.m */; };
+		EF8679E4059525C23F559DEEC4CC89E7 /* RFFeatureAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 128E22D7C3F4AB9BF239080F508D0B3E /* RFFeatureAPIClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F05B4FD7C7712817876329E821E33708 /* FBSnapshotTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1432F9888FE3DB6A9C1927863C9732C /* FBSnapshotTestController.m */; };
 		F21D0F96BA6EDE58E4F70E83568E07D5 /* OHHTTPStubsResponse+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 07981F44084BE4693143554F2884FF1C /* OHHTTPStubsResponse+JSON.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		F2E8AFDC237725F30722A5785EE8C3C7 /* OCMLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC0657A54A91B876EA4B48BDCCB02A4 /* OCMLocation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -175,9 +178,7 @@
 		F5972D51F6EE335382965B9DDEC675D6 /* OCMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9F79647184C375B006E1262FE46756 /* OCMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FB56A2F0614574D57185E69B454F7FF2 /* OCMPassByRefSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D6A6F3449240E9816676FEF02EA990 /* OCMPassByRefSetter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FD1FD979FF45BE2A30A40482565EB768 /* OCMArg.h in Headers */ = {isa = PBXBuildFile; fileRef = 78685237D4D39756572C8D9FCF7B5541 /* OCMArg.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FD98DB04A4DDA10462F476A974E76D52 /* RFFeatureToggle.h in Headers */ = {isa = PBXBuildFile; fileRef = 54570C4FA6BBA9AADA684F89F7267D42 /* RFFeatureToggle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FF82A4FADF612D7C4CCEA900E0840996 /* OCMStubRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FE5CCC545B73A37AE817FDCDDDE8D5 /* OCMStubRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FFDB9C5C651937451B5BEA36F082FCF3 /* RFFeatureCache.h in Headers */ = {isa = PBXBuildFile; fileRef = E7CD1EEE6517853A64D11FE25FDACF64 /* RFFeatureCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -249,11 +250,12 @@
 		08FE5CCC545B73A37AE817FDCDDDE8D5 /* OCMStubRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMStubRecorder.m; path = Source/OCMock/OCMStubRecorder.m; sourceTree = "<group>"; };
 		0BBD690CC1180CC260550FF7C0FAC2ED /* OCPartialMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCPartialMockObject.m; path = Source/OCMock/OCPartialMockObject.m; sourceTree = "<group>"; };
 		0C6E067FA88BC0F45FEC8EAEF4566537 /* OHHTTPStubs.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OHHTTPStubs.m; path = OHHTTPStubs/Sources/OHHTTPStubs.m; sourceTree = "<group>"; };
+		0CB33628BFCCC35073A5B98C8B8C4DE8 /* RFFeatureToggle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RFFeatureToggle.h; sourceTree = "<group>"; };
 		0DA2933C4DF9F3085E1FCDF5429D5455 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
 		0EB3339CDC75032DBBCE9178DDB6F2FA /* Pods-RFFeatureToggle_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-RFFeatureToggle_Tests.modulemap"; sourceTree = "<group>"; };
 		0F1AB2A9843265DB7BAC7BD270E66649 /* Pods-RFFeatureToggle_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RFFeatureToggle_Tests-umbrella.h"; sourceTree = "<group>"; };
 		118951B94A3528558C4BFB93484C600E /* OCMInvocationExpectation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMInvocationExpectation.h; path = Source/OCMock/OCMInvocationExpectation.h; sourceTree = "<group>"; };
-		142E867D6E1F05E572AC61E8AF013D76 /* RFFeatureToggle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RFFeatureToggle.m; sourceTree = "<group>"; };
+		128E22D7C3F4AB9BF239080F508D0B3E /* RFFeatureAPIClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RFFeatureAPIClient.h; sourceTree = "<group>"; };
 		14300F9172E0A406D7F8172702C2E9BF /* OCMBoxedReturnValueProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMBoxedReturnValueProvider.m; path = Source/OCMock/OCMBoxedReturnValueProvider.m; sourceTree = "<group>"; };
 		167CE0B11359926C23CC1701C44AF366 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		17C937A807DBEFD9B3918CDC967189AE /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
@@ -264,25 +266,24 @@
 		1D9BA662B684857250433D181B8CE2B7 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E5E95140C68D3B6F3B283230CCA0408 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25E01D1BE2B0076CC12BA0408EC81750 /* OCMVerifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMVerifier.m; path = Source/OCMock/OCMVerifier.m; sourceTree = "<group>"; };
+		266A70A26B279455EFC2D3F375FCABAA /* RFFeatureToggleDefaults.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RFFeatureToggleDefaults.h; sourceTree = "<group>"; };
 		2777806A8D1AAD1BF25A12751F72488A /* OCMRealObjectForwarder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMRealObjectForwarder.m; path = Source/OCMock/OCMRealObjectForwarder.m; sourceTree = "<group>"; };
 		293152512998C419A65F609C768BB95D /* OCMLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMLocation.h; path = Source/OCMock/OCMLocation.h; sourceTree = "<group>"; };
-		2A7A0D85498810C1ABD3DD32FE44D78D /* RFFeatureToggleDefaults.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RFFeatureToggleDefaults.m; sourceTree = "<group>"; };
 		2BBC75F9EB11AD08EC3E1C2BD27BCA54 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OHHTTPStubs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C9F79647184C375B006E1262FE46756 /* OCMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMockObject.m; path = Source/OCMock/OCMockObject.m; sourceTree = "<group>"; };
 		2DD01DCBC417D28FA11BCD11FCA4CB86 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		2DDACB28EA15A368203F364B5ECDF974 /* Pods-RFFeatureToggle_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RFFeatureToggle_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		2EB795130F6A97C941C15245F0BEAC1E /* NSInvocation+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSInvocation+OCMAdditions.h"; path = "Source/OCMock/NSInvocation+OCMAdditions.h"; sourceTree = "<group>"; };
-		2FCC720C28C81640CE5E40289C4AF57B /* RFFeatureTableViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RFFeatureTableViewController.m; sourceTree = "<group>"; };
 		34C4B8BE7EF589A823462EE128CE89BC /* FBSnapshotTestCase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FBSnapshotTestCase-dummy.m"; sourceTree = "<group>"; };
 		37CBB7D40A699B4E230EA2B1BE9B6427 /* OCMObserverRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMObserverRecorder.m; path = Source/OCMock/OCMObserverRecorder.m; sourceTree = "<group>"; };
 		3AE9308CD4079F115704210C2B86BE90 /* OHHTTPStubs-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OHHTTPStubs-prefix.pch"; sourceTree = "<group>"; };
-		3C0DC6931066BE1F503F44EC5B3F09F6 /* RFFeature+API.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RFFeature+API.m"; sourceTree = "<group>"; };
 		3ED952263FD2E0F9174F26CFAACDD27F /* OCMBlockArgCaller.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMBlockArgCaller.m; path = Source/OCMock/OCMBlockArgCaller.m; sourceTree = "<group>"; };
+		4006500DDB9CC361C1F0A0F5900A1DB3 /* RFFeatureTableViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RFFeatureTableViewController.h; sourceTree = "<group>"; };
 		4219DB5A61758191BC23043CAE729F10 /* OCMNotificationPoster.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMNotificationPoster.m; path = Source/OCMock/OCMNotificationPoster.m; sourceTree = "<group>"; };
 		428698E8E39F589D2E7914CC8F4E57FA /* OCMExceptionReturnValueProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMExceptionReturnValueProvider.m; path = Source/OCMock/OCMExceptionReturnValueProvider.m; sourceTree = "<group>"; };
 		46F347EA780FE2FD233D81ADAA42542F /* Pods-RFFeatureToggle_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RFFeatureToggle_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		4A0EFF0E0C067DC2B829FBD29831718A /* Pods_RFFeatureToggle_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RFFeatureToggle_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B294FBF0092836E13F9A14245494ACD /* RFFeature.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RFFeature.m; sourceTree = "<group>"; };
+		4B0E32B8090A3954E09802235BF4C9DB /* RFFeatureCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RFFeatureCache.h; sourceTree = "<group>"; };
 		4B450539C1ECF1F268C0F8A51D9980D2 /* RFFeatureToggle.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RFFeatureToggle.xcconfig; sourceTree = "<group>"; };
 		4C9A84441CD9ADE2765D77A9868705A2 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
 		4D0C5E83E346D795D74B6B9AE986EB71 /* OHHTTPStubs-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OHHTTPStubs-dummy.m"; sourceTree = "<group>"; };
@@ -294,11 +295,9 @@
 		535A4B143D21C2B058C0168430C8F935 /* Pods-RFFeatureToggle_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-RFFeatureToggle_Example.modulemap"; sourceTree = "<group>"; };
 		53CDE37157236AA065AE06667D73F905 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
 		53F62E5F49D0D374585FEE0609E31FD8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		54570C4FA6BBA9AADA684F89F7267D42 /* RFFeatureToggle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RFFeatureToggle.h; sourceTree = "<group>"; };
 		553FA43116D0B5DF41F2EF8438859667 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
 		57AA208197A329705B8ACA92620809D9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		582C8AB5DA286F4313165EA4B759C919 /* OCMPassByRefSetter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMPassByRefSetter.h; path = Source/OCMock/OCMPassByRefSetter.h; sourceTree = "<group>"; };
-		58EA37067ACCA6818537B795E9BB81EB /* RFFeatureTableViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RFFeatureTableViewController.h; sourceTree = "<group>"; };
 		5A7C4307C6483558D7D71141B1C91B7E /* OCMFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMFunctions.h; path = Source/OCMock/OCMFunctions.h; sourceTree = "<group>"; };
 		5ABC32819B8AD1FE508B3122970E3D3B /* Pods-RFFeatureToggle_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RFFeatureToggle_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5AC0657A54A91B876EA4B48BDCCB02A4 /* OCMLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMLocation.m; path = Source/OCMock/OCMLocation.m; sourceTree = "<group>"; };
@@ -309,9 +308,11 @@
 		5F050D2421445045F8D50F5F0E320384 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5F3B49823055261DB1579890C779E111 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperationManager.m; path = AFNetworking/AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		5FACC1CCBFF78AA88191FAE1DD59347E /* OHHTTPStubs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OHHTTPStubs.xcconfig; sourceTree = "<group>"; };
+		6158AA53219C91CB56E2425DEA297A7A /* RFFeature.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RFFeature.m; sourceTree = "<group>"; };
 		61CFA58542D1C3B9AA63C693E42AEEE6 /* NSValue+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValue+OCMAdditions.m"; path = "Source/OCMock/NSValue+OCMAdditions.m"; sourceTree = "<group>"; };
 		63294E2A26B36E71ECA659635AE6806D /* OCMock.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OCMock.xcconfig; sourceTree = "<group>"; };
 		669B2C6525CEA68B0F75FCEB8D47875E /* OHHTTPStubsResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OHHTTPStubsResponse.m; path = OHHTTPStubs/Sources/OHHTTPStubsResponse.m; sourceTree = "<group>"; };
+		6782DF48D05F561C137B49271ACE3A12 /* RFFeature+Mapping.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RFFeature+Mapping.h"; sourceTree = "<group>"; };
 		67993CD6B1881EA672809B93478BE99B /* AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AFNetworking.modulemap; sourceTree = "<group>"; };
 		684AC0BF9FC968B706DC6813C7C33054 /* RFFeatureToggle-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RFFeatureToggle-dummy.m"; sourceTree = "<group>"; };
 		6851219EFD153B9D00D5896832F7D2CF /* OCMFunctionsPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMFunctionsPrivate.h; path = Source/OCMock/OCMFunctionsPrivate.h; sourceTree = "<group>"; };
@@ -322,6 +323,7 @@
 		71A678C63B5E586E1D53C80722877CBB /* FBSnapshotTestCase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSnapshotTestCase-prefix.pch"; sourceTree = "<group>"; };
 		73435BA07016648B7DD652204E679F1B /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
 		73CFBCD18B4B478DF2CF5B75A99DA2E6 /* OCClassMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCClassMockObject.h; path = Source/OCMock/OCClassMockObject.h; sourceTree = "<group>"; };
+		73D07C153E0FB7192191BD3A503C3199 /* RFFeatureToggleDefaults.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RFFeatureToggleDefaults.m; sourceTree = "<group>"; };
 		7490470D455BD349F0EA5BC749BCDF4A /* OCMInvocationStub.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMInvocationStub.m; path = Source/OCMock/OCMInvocationStub.m; sourceTree = "<group>"; };
 		75B808A276A827731D07672311F7EBA3 /* Pods-RFFeatureToggle_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RFFeatureToggle_Example-dummy.m"; sourceTree = "<group>"; };
 		76562B804480877FD930C8982B4F99D7 /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+AFNetworking.m"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
@@ -343,7 +345,6 @@
 		8D4DACDE08E57AE098F239E55BC27518 /* UIImage+Compare.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Compare.h"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.h"; sourceTree = "<group>"; };
 		8F1C7A9ADD67ADA5613A6960B00E13EE /* OCMStubRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMStubRecorder.h; path = Source/OCMock/OCMStubRecorder.h; sourceTree = "<group>"; };
 		8F8662D03A234F42BB2C8462CD84D6E2 /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
-		8F9CEEFF3E1DB9E11B0D14FDE88E07CA /* RFFeature+Mapping.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RFFeature+Mapping.m"; sourceTree = "<group>"; };
 		8FB544888B80F5797B6FB2F61C2EAA22 /* OHHTTPStubs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OHHTTPStubs.h; path = OHHTTPStubs/Sources/OHHTTPStubs.h; sourceTree = "<group>"; };
 		90232F7AB752FF989FE0CF7F0EAA638B /* OCMRealObjectForwarder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMRealObjectForwarder.h; path = Source/OCMock/OCMRealObjectForwarder.h; sourceTree = "<group>"; };
 		911A896E19BAD30540ACD98D7E684504 /* OCProtocolMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCProtocolMockObject.m; path = Source/OCMock/OCProtocolMockObject.m; sourceTree = "<group>"; };
@@ -353,10 +354,12 @@
 		96D80DAC726DB482D34E1B4154425584 /* Pods-RFFeatureToggle_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RFFeatureToggle_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		97D64D6BE8E0FC46A03BE6030CA87FCF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		99DC1701ACD972363426138FB234B41B /* OCClassMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCClassMockObject.m; path = Source/OCMock/OCClassMockObject.m; sourceTree = "<group>"; };
+		9ADBD110449B2B8D484E76632B2F4400 /* RFFeatureToggleLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RFFeatureToggleLogging.h; sourceTree = "<group>"; };
 		9B88CE23645765993C8DFFE7BE5BB324 /* OCMExceptionReturnValueProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMExceptionReturnValueProvider.h; path = Source/OCMock/OCMExceptionReturnValueProvider.h; sourceTree = "<group>"; };
 		9BA8B02E7D4DE0007443D89C7EB2E2D3 /* NSInvocation+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSInvocation+OCMAdditions.m"; path = "Source/OCMock/NSInvocation+OCMAdditions.m"; sourceTree = "<group>"; };
 		9D0700E44530D6F77DBBE95CE1DB1293 /* RFFeatureToggle.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = RFFeatureToggle.modulemap; sourceTree = "<group>"; };
 		9DEF2202C0AD5C59F8C845D39BBA01CE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		9F23159726C4B0F38F53712647F10612 /* RFFeatureAPIClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RFFeatureAPIClient.m; sourceTree = "<group>"; };
 		A051AB284E392C9137C61F359F8DF7B0 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
 		A070BCD82CD48627BD084D2544D40C19 /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+AFNetworking.h"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
 		A11CCB027427E6E3CD294C1E935BFD8C /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -366,11 +369,13 @@
 		A7DC31680D769012AA9C525A943BF899 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
 		A981F382672071CA03BD99BC2B4D8CA6 /* RFFeatureToggle-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RFFeatureToggle-prefix.pch"; sourceTree = "<group>"; };
 		A9AF771A2B34F33D8AAC9669B3B38F07 /* OCMBlockArgCaller.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMBlockArgCaller.h; path = Source/OCMock/OCMBlockArgCaller.h; sourceTree = "<group>"; };
-		AA9221D0CE198C2FC7A7EECCCF6F751E /* RFFeatureToggleDefaults.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RFFeatureToggleDefaults.h; sourceTree = "<group>"; };
+		AA201026D20DD799BC37DCECD4FA09B8 /* RFFeatureTableViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RFFeatureTableViewController.m; sourceTree = "<group>"; };
 		AAD9392AF80CB19374109A9FD8F96EC6 /* OCProtocolMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCProtocolMockObject.h; path = Source/OCMock/OCProtocolMockObject.h; sourceTree = "<group>"; };
 		AB3B2F32CEA489FB345950066A2902A3 /* Pods-RFFeatureToggle_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RFFeatureToggle_Example-umbrella.h"; sourceTree = "<group>"; };
+		AC4764E2CD4BF8E86FEFF8C512EE2210 /* RFFeature.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RFFeature.h; sourceTree = "<group>"; };
 		AE50860F766122E386A114B8C392B06A /* OCMArgAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMArgAction.m; path = Source/OCMock/OCMArgAction.m; sourceTree = "<group>"; };
 		AE52A13586CEBB125AE172A6F136B020 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		AFAB950D8C8FB0B26B4A05C8937611F1 /* RFFeature+API.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RFFeature+API.h"; sourceTree = "<group>"; };
 		B004BABE53D80A0741DD7B1ED20F4DA2 /* OCMVerifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMVerifier.h; path = Source/OCMock/OCMVerifier.h; sourceTree = "<group>"; };
 		B0F0ADDB86030D4BCDA74F69283377F7 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		B376412847162E2D54512E4124CFA20A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -390,6 +395,7 @@
 		C23355758809DE667333C2C50226E206 /* OCMNotificationPoster.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMNotificationPoster.h; path = Source/OCMock/OCMNotificationPoster.h; sourceTree = "<group>"; };
 		C24A2F732F777830A54462F16C192AB7 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
 		C2631BED7BAB894F2A75AA242DB1A88C /* OCObserverMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCObserverMockObject.h; path = Source/OCMock/OCObserverMockObject.h; sourceTree = "<group>"; };
+		C276B5B598E4D0D1A366249A29A6311D /* RFFeature+API.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RFFeature+API.m"; sourceTree = "<group>"; };
 		C3D524A54B65677ABFA9AF37C085BF83 /* RFFeatureToggle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RFFeatureToggle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C660FB46DA37852AFAA0658FA83A83C8 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
 		C7526165AD19112536B41D9225B45271 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+OCMAdditions.h"; path = "Source/OCMock/NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
@@ -399,6 +405,7 @@
 		C97BB168CDEB611B521B786DAF403915 /* OHPathHelpers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OHPathHelpers.m; path = OHHTTPStubs/Sources/OHPathHelpers/OHPathHelpers.m; sourceTree = "<group>"; };
 		CC0950CB0CBE3B01CD798043D6A18434 /* Pods-RFFeatureToggle_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RFFeatureToggle_Tests-resources.sh"; sourceTree = "<group>"; };
 		CC430AC4279C5A1E27EB3773E622BDC6 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperationManager.h; path = AFNetworking/AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		CC5669654A7C7C9D578F85306C43F482 /* RFFeature+Mapping.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RFFeature+Mapping.m"; sourceTree = "<group>"; };
 		D06CA78DA21BD5A83C6DB8334CE4832B /* AFNetworking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-umbrella.h"; sourceTree = "<group>"; };
 		D1432F9888FE3DB6A9C1927863C9732C /* FBSnapshotTestController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestController.m; path = FBSnapshotTestCase/FBSnapshotTestController.m; sourceTree = "<group>"; };
 		D1B297E1504618B9B25B93AB67F05D6C /* Pods-RFFeatureToggle_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RFFeatureToggle_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -411,18 +418,17 @@
 		D87F1FDF7AF5FFD76344FA68ACCBE933 /* OCMReturnValueProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMReturnValueProvider.h; path = Source/OCMock/OCMReturnValueProvider.h; sourceTree = "<group>"; };
 		D8DBFAD5BFE982B0844871058357E3FC /* OCMIndirectReturnValueProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMIndirectReturnValueProvider.h; path = Source/OCMock/OCMIndirectReturnValueProvider.h; sourceTree = "<group>"; };
 		D93500AFA26B134E05837C711EA8EDC4 /* OCMInvocationMatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMInvocationMatcher.m; path = Source/OCMock/OCMInvocationMatcher.m; sourceTree = "<group>"; };
-		DBE8B2715606CA6725CCAA71E7B0B946 /* RFFeature+API.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RFFeature+API.h"; sourceTree = "<group>"; };
-		DC75891AA5B53C8AEFC545B2C436E811 /* RFFeature+Mapping.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RFFeature+Mapping.h"; sourceTree = "<group>"; };
 		DD016F46812E341C4C595A851A3B12A5 /* UIImage+Diff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Diff.h"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.h"; sourceTree = "<group>"; };
 		DEDC936F74AA310311F03A7BB83A9D40 /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
 		DF198EDB7877BE1B8E256696D3FF6C76 /* OCMExpectationRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMExpectationRecorder.h; path = Source/OCMock/OCMExpectationRecorder.h; sourceTree = "<group>"; };
 		E065D89415D2446DE417455E5CC04773 /* OHHTTPStubsResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OHHTTPStubsResponse.h; path = OHHTTPStubs/Sources/OHHTTPStubsResponse.h; sourceTree = "<group>"; };
+		E1D8FF728FF60BAEECD5AFCB3FDCB314 /* RFFeatureToggle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RFFeatureToggle.m; sourceTree = "<group>"; };
 		E26D59DDB6EF1FAE2F894D7BA9252FE2 /* FBSnapshotTestCase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCase.h; path = FBSnapshotTestCase/FBSnapshotTestCase.h; sourceTree = "<group>"; };
 		E3317E14D5B60C6961387E790684CDCE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4B08C94AAA874043C7EFB862F3967BB /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
+		E55E1F51C880FB66B5C02378EAC0D0F4 /* RFFeatureCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RFFeatureCache.m; sourceTree = "<group>"; };
 		E6BF7DB9B0FD53F4D22F8C980AC9C863 /* FBSnapshotTestCasePlatform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCasePlatform.m; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.m; sourceTree = "<group>"; };
 		E70413E92A205C4B922049565DB3E873 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7CD1EEE6517853A64D11FE25FDACF64 /* RFFeatureCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RFFeatureCache.h; sourceTree = "<group>"; };
 		E89B2A027DE2F1B6729D583BAD93F6C8 /* OCMObserverRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMObserverRecorder.h; path = Source/OCMock/OCMObserverRecorder.h; sourceTree = "<group>"; };
 		E973937E8B3EB63044AD1E2D28DF9314 /* RFFeatureToggle-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RFFeatureToggle-umbrella.h"; sourceTree = "<group>"; };
 		E9F6DE905A04455DD786F46B1BF311E3 /* OCMInvocationStub.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMInvocationStub.h; path = Source/OCMock/OCMInvocationStub.h; sourceTree = "<group>"; };
@@ -435,16 +441,12 @@
 		F1D6A6F3449240E9816676FEF02EA990 /* OCMPassByRefSetter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMPassByRefSetter.m; path = Source/OCMock/OCMPassByRefSetter.m; sourceTree = "<group>"; };
 		F2668F5E3DB44DDB953A7322BA6758EE /* Pods-RFFeatureToggle_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RFFeatureToggle_Example-frameworks.sh"; sourceTree = "<group>"; };
 		F303D487BDBC84C355743DA75EA5135E /* OCObserverMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCObserverMockObject.m; path = Source/OCMock/OCObserverMockObject.m; sourceTree = "<group>"; };
-		F323D1DB4607A98F864C64D89723F40D /* RFFeatureAPIClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RFFeatureAPIClient.h; sourceTree = "<group>"; };
 		F32934E5A1F0AEA3FB6EA90EF9CC71AE /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
-		F40E47371C91691A11404FC4960A6FF9 /* RFFeatureCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RFFeatureCache.m; sourceTree = "<group>"; };
 		F41D47B9A3755517C16FD0CE03897B3B /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
-		F4C25F54FC4E460FAA9021960985634F /* RFFeatureAPIClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RFFeatureAPIClient.m; sourceTree = "<group>"; };
 		F554AB310FB17072FFFA758FBD8F7B41 /* OCMock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMock.h; path = Source/OCMock/OCMock.h; sourceTree = "<group>"; };
 		F70CD5FB3C19FD2709FE32445C6C5195 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		F9120496BCBE643F90D18B12B316E370 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
 		F97D1B9056A536943E1FFD1DEF3B1417 /* OCMBlockCaller.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMBlockCaller.m; path = Source/OCMock/OCMBlockCaller.m; sourceTree = "<group>"; };
-		F9D57E04FD8FD085ACB6B0C22433A69B /* RFFeature.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RFFeature.h; sourceTree = "<group>"; };
 		FAF0CD59CBEF608A957BEF13F153505D /* OCMRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMRecorder.h; path = Source/OCMock/OCMRecorder.h; sourceTree = "<group>"; };
 		FBC44CEF3E013A078B2CD5D05F0C2D5D /* OHHTTPStubsResponse+JSON.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "OHHTTPStubsResponse+JSON.h"; path = "OHHTTPStubs/Sources/JSON/OHHTTPStubsResponse+JSON.h"; sourceTree = "<group>"; };
 		FE57CB91BCC5AC83F230FE0532FE0030 /* OCMInvocationExpectation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMInvocationExpectation.m; path = Source/OCMock/OCMInvocationExpectation.m; sourceTree = "<group>"; };
@@ -582,18 +584,6 @@
 			name = Reachability;
 			sourceTree = "<group>";
 		};
-		41F03714BF0CDB8316B9761F26519D34 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				54570C4FA6BBA9AADA684F89F7267D42 /* RFFeatureToggle.h */,
-				142E867D6E1F05E572AC61E8AF013D76 /* RFFeatureToggle.m */,
-				4FF439B03F1EBFD1E1A39EDA2D9687FB /* Controller */,
-				FDAA8694BD57B3A46DC9830C7F98CE46 /* Model */,
-				6C8F27FE70AD8D293DC448ACAA9B4CF1 /* View */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		44050668D228FB90EA6CAA090482FE9D /* NSURLSession */ = {
 			isa = PBXGroup;
 			children = (
@@ -608,7 +598,7 @@
 		4C7089E31976268FB72E0FD3939CB188 /* RFFeatureToggle */ = {
 			isa = PBXGroup;
 			children = (
-				6E66237F132E5BDA0082A1A73A53E967 /* Pod */,
+				578800801B4B3EF4FFB80AB02BAC77CA /* Pod */,
 				77414B209E5C5234729F511F034B9308 /* Support Files */,
 			);
 			name = RFFeatureToggle;
@@ -623,15 +613,23 @@
 			name = NSURLSession;
 			sourceTree = "<group>";
 		};
-		4FF439B03F1EBFD1E1A39EDA2D9687FB /* Controller */ = {
+		578800801B4B3EF4FFB80AB02BAC77CA /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				F323D1DB4607A98F864C64D89723F40D /* RFFeatureAPIClient.h */,
-				F4C25F54FC4E460FAA9021960985634F /* RFFeatureAPIClient.m */,
-				E7CD1EEE6517853A64D11FE25FDACF64 /* RFFeatureCache.h */,
-				F40E47371C91691A11404FC4960A6FF9 /* RFFeatureCache.m */,
-				AA9221D0CE198C2FC7A7EECCCF6F751E /* RFFeatureToggleDefaults.h */,
-				2A7A0D85498810C1ABD3DD32FE44D78D /* RFFeatureToggleDefaults.m */,
+				8244A1FF756E03419E51E60411C811A9 /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		5A6F7C23ADA98C76362BA8FEE3F2B2B5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				128E22D7C3F4AB9BF239080F508D0B3E /* RFFeatureAPIClient.h */,
+				9F23159726C4B0F38F53712647F10612 /* RFFeatureAPIClient.m */,
+				4B0E32B8090A3954E09802235BF4C9DB /* RFFeatureCache.h */,
+				E55E1F51C880FB66B5C02378EAC0D0F4 /* RFFeatureCache.m */,
+				266A70A26B279455EFC2D3F375FCABAA /* RFFeatureToggleDefaults.h */,
+				73D07C153E0FB7192191BD3A503C3199 /* RFFeatureToggleDefaults.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -645,15 +643,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		6C8F27FE70AD8D293DC448ACAA9B4CF1 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				58EA37067ACCA6818537B795E9BB81EB /* RFFeatureTableViewController.h */,
-				2FCC720C28C81640CE5E40289C4AF57B /* RFFeatureTableViewController.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		6D0649449608900D7A62CEECD4C7933B /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -662,12 +651,17 @@
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		6E66237F132E5BDA0082A1A73A53E967 /* Pod */ = {
+		6D463ABE57D8AD1F7D8C1CA7F77BB9AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				41F03714BF0CDB8316B9761F26519D34 /* Classes */,
+				AC4764E2CD4BF8E86FEFF8C512EE2210 /* RFFeature.h */,
+				6158AA53219C91CB56E2425DEA297A7A /* RFFeature.m */,
+				AFAB950D8C8FB0B26B4A05C8937611F1 /* RFFeature+API.h */,
+				C276B5B598E4D0D1A366249A29A6311D /* RFFeature+API.m */,
+				6782DF48D05F561C137B49271ACE3A12 /* RFFeature+Mapping.h */,
+				CC5669654A7C7C9D578F85306C43F482 /* RFFeature+Mapping.m */,
 			);
-			path = Pod;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		702469558510E918DA3D6F0AC730625E /* FBSnapshotTestCase */ = {
@@ -728,6 +722,19 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/OHHTTPStubs";
+			sourceTree = "<group>";
+		};
+		8244A1FF756E03419E51E60411C811A9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0CB33628BFCCC35073A5B98C8B8C4DE8 /* RFFeatureToggle.h */,
+				E1D8FF728FF60BAEECD5AFCB3FDCB314 /* RFFeatureToggle.m */,
+				9ADBD110449B2B8D484E76632B2F4400 /* RFFeatureToggleLogging.h */,
+				5A6F7C23ADA98C76362BA8FEE3F2B2B5 /* Controller */,
+				6D463ABE57D8AD1F7D8C1CA7F77BB9AC /* Model */,
+				F31CA4372F6F5CD490332C8C2115C21B /* View */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		9164E847257B0218B9A879EBC6CEFDD9 /* iOS */ = {
@@ -1002,38 +1009,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FDAA8694BD57B3A46DC9830C7F98CE46 /* Model */ = {
+		F31CA4372F6F5CD490332C8C2115C21B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F9D57E04FD8FD085ACB6B0C22433A69B /* RFFeature.h */,
-				4B294FBF0092836E13F9A14245494ACD /* RFFeature.m */,
-				DBE8B2715606CA6725CCAA71E7B0B946 /* RFFeature+API.h */,
-				3C0DC6931066BE1F503F44EC5B3F09F6 /* RFFeature+API.m */,
-				DC75891AA5B53C8AEFC545B2C436E811 /* RFFeature+Mapping.h */,
-				8F9CEEFF3E1DB9E11B0D14FDE88E07CA /* RFFeature+Mapping.m */,
+				4006500DDB9CC361C1F0A0F5900A1DB3 /* RFFeatureTableViewController.h */,
+				AA201026D20DD799BC37DCECD4FA09B8 /* RFFeatureTableViewController.m */,
 			);
-			path = Model;
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		16A4566383B861FA41CD4C88F8BC7576 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CDE34A3390AED2F298C936DB1BD8FA03 /* RFFeature+API.h in Headers */,
-				84D51DBB815CA667B27CE3BF46F3183C /* RFFeature+Mapping.h in Headers */,
-				20141E71CCD235D9C53E965E264DF9D3 /* RFFeature.h in Headers */,
-				AB1447453D15B58003AD64A34F5D3E3C /* RFFeatureAPIClient.h in Headers */,
-				FFDB9C5C651937451B5BEA36F082FCF3 /* RFFeatureCache.h in Headers */,
-				9E854257BD804CEF6001DED4F939F847 /* RFFeatureTableViewController.h in Headers */,
-				AEA66E11E6E13E9A768EB10F14E507E4 /* RFFeatureToggle-umbrella.h in Headers */,
-				FD98DB04A4DDA10462F476A974E76D52 /* RFFeatureToggle.h in Headers */,
-				A82D29862D67901A5CEA890799DFDD29 /* RFFeatureToggleDefaults.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		40E54271825F4A2E8660B91A391BDC55 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1116,6 +1103,23 @@
 				32A59DBF168A9B955C020B5719EBCB0D /* OHHTTPStubsResponse+JSON.h in Headers */,
 				12D2F7AA45E613F050F3BF2F39BBA47B /* OHHTTPStubsResponse.h in Headers */,
 				A6CCC994A5541AB7ADE2DA96E90CC702 /* OHPathHelpers.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5BFC6588283DD262835D855942A0085 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DE98F2D4F25827A4BBCE4446645F752 /* RFFeature+API.h in Headers */,
+				E08FD83E1DEE3343B88A614FABFB2946 /* RFFeature+Mapping.h in Headers */,
+				0ADDBF7E858A4D4AED7A6899B41D2104 /* RFFeature.h in Headers */,
+				EF8679E4059525C23F559DEEC4CC89E7 /* RFFeatureAPIClient.h in Headers */,
+				22E9CA659D249F9DC738B8CFE60ABDDC /* RFFeatureCache.h in Headers */,
+				10233B7FA93750436DD1B30401BD58A6 /* RFFeatureTableViewController.h in Headers */,
+				633F4AD5210AF70AAE5B93F17CAC1163 /* RFFeatureToggle-umbrella.h in Headers */,
+				3EBA5325A30F55C16A2EF262C854A225 /* RFFeatureToggle.h in Headers */,
+				AC03A6F21ABF8A9433A1BBF7FE705496 /* RFFeatureToggleDefaults.h in Headers */,
+				8A318C99C1D4379D52314DE898822955 /* RFFeatureToggleLogging.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1211,7 +1215,7 @@
 			buildPhases = (
 				C3940B4E911BABEF195915F66B78BE95 /* Sources */,
 				6E4418C5B9A30F0215EAE4313E377C28 /* Frameworks */,
-				16A4566383B861FA41CD4C88F8BC7576 /* Headers */,
+				C5BFC6588283DD262835D855942A0085 /* Headers */,
 			);
 			buildRules = (
 			);

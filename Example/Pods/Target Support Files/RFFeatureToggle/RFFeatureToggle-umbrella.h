@@ -7,6 +7,7 @@
 #import "RFFeature+Mapping.h"
 #import "RFFeature.h"
 #import "RFFeatureToggle.h"
+#import "RFFeatureToggleLogging.h"
 #import "RFFeatureTableViewController.h"
 
 FOUNDATION_EXPORT double RFFeatureToggleVersionNumber;

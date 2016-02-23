@@ -22,20 +22,20 @@ PODS:
     - AFNetworking/NSURLSession
   - FBSnapshotTestCase/Core (2.0.7)
   - OCMock (3.2.2)
-  - OHHTTPStubs (4.7.0):
-    - OHHTTPStubs/Default (= 4.7.0)
-  - OHHTTPStubs/Core (4.7.0)
-  - OHHTTPStubs/Default (4.7.0):
+  - OHHTTPStubs (4.7.1):
+    - OHHTTPStubs/Default (= 4.7.1)
+  - OHHTTPStubs/Core (4.7.1)
+  - OHHTTPStubs/Default (4.7.1):
     - OHHTTPStubs/Core
     - OHHTTPStubs/JSON
     - OHHTTPStubs/NSURLSession
     - OHHTTPStubs/OHPathHelpers
-  - OHHTTPStubs/JSON (4.7.0):
+  - OHHTTPStubs/JSON (4.7.1):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/NSURLSession (4.7.0):
+  - OHHTTPStubs/NSURLSession (4.7.1):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/OHPathHelpers (4.7.0)
-  - RFFeatureToggle (0.1.0):
+  - OHHTTPStubs/OHPathHelpers (4.7.1)
+  - RFFeatureToggle (1.0.1):
     - AFNetworking (< 2.6)
 
 DEPENDENCIES:
@@ -52,7 +52,7 @@ SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   FBSnapshotTestCase: 7e85180d0d141a0cf472352edda7e80d7eaeb547
   OCMock: 18c9b7e67d4c2770e95bb77a9cc1ae0c91fe3835
-  OHHTTPStubs: d2bf6a0f407620d67e75a1d3f12d86a2b1dd15c0
-  RFFeatureToggle: f0c2e4a7a09a202fca54627be4dffb9e8b8d72e5
+  OHHTTPStubs: f7d1604d04d37d055460c0ef9af01bb249ded0fa
+  RFFeatureToggle: 19cf22b723edbac6e506fb037fb20606ea768446
 
 COCOAPODS: 0.39.0
