@@ -1,5 +1,8 @@
 # Change Log
 
+## [1.0.4](https://github.com/raumfeld/RFFeatureToggle/tree/1.0.4) (2016-03-17)
+[Full Changelog](https://github.com/raumfeld/RFFeatureToggle/compare/1.0.3...1.0.4)
+
 ## [1.0.3](https://github.com/raumfeld/RFFeatureToggle/tree/1.0.3) (2016-02-25)
 [Full Changelog](https://github.com/raumfeld/RFFeatureToggle/compare/1.0.2...1.0.3)
 
