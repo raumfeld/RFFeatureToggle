@@ -137,6 +137,8 @@
     
     [self waitForExpectationsWithTimeout:0.5f handler:^(NSError *error) {
         XCTAssertNil(error,@"Error should be nil");
+        
+        XCTAssertTrue([[RFFeatureCache allFeatures] isEqualToArray:objects]);
     }];
 }
 

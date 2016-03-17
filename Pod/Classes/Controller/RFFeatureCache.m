@@ -100,13 +100,14 @@ static RFFeatureCache *sharedCache;
     NSSet *set1 = [NSSet setWithArray:[self allFeatures]];
     NSSet *set2 = [NSSet setWithArray:features];
 
-    if (![set1 isEqualToSet:set2]) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:RFFeatureToggleUpdatedNotification object:nil];
-    }
-
     [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:features] forKey:RFFeatureTogglePlistNameKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [self storeLastUpdateDate:[NSDate date]];
+    
+    if (![set1 isEqualToSet:set2])
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:RFFeatureToggleUpdatedNotification object:nil];
+    }
 
     //schedule automatic refresh
     if ([RFFeatureToggleDefaults sharedDefaults].refreshTimeInterval > 0)
