@@ -6,7 +6,7 @@ install:
 - gem install slather
 
 script:
-- xctool -project {{path_to_xcodeproj}} -scheme {{your_testing_scheme}} build test -sdk iphonesimulator GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
+- xctool -project "RFFeatureToggle.xcodeproj" -scheme "RFFeatureToggle" build test -sdk iphonesimulator GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
 
 after_success:
 -  bash <(curl -s https://codecov.io/bash)
