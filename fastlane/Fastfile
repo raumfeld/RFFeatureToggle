@@ -46,13 +46,13 @@ lane :release do |options|
 
   changelog = changelog_from_git_commits
 
-  git_commit(path: "RFSVG.podspec", message: "Bump to #{version}")
+  git_commit(path: "RFFeatureToggle.podspec", message: "Bump to #{version}")
   add_git_tag(tag: "#{version}")
   push_to_git_remote(remote_branch: 'master', force: false, tags: true)
 
   github_release = set_github_release(
     api_token: options[:token],
-    repository_name: "raumfeld/RFSVG",
+    repository_name: "raumfeld/RFFeatureToggle",
     name: version,
     tag_name: version,
     description: changelog,
