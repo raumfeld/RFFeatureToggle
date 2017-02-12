@@ -47,7 +47,6 @@
     XCTAssertTrue(policy.SSLPinningMode == AFSSLPinningModeCertificate,@"Pinning mode must be certificate");
     XCTAssertTrue(policy.allowInvalidCertificates,@"Invalid certificates should be allowed");
     XCTAssertFalse(policy.validatesDomainName,@"Validates domain name must be set to false");
-    XCTAssertFalse(policy.validatesCertificateChain,@"Validates certificate chain must be set to false");
 }
 
 - (void)testRemovingPinnedCertificate

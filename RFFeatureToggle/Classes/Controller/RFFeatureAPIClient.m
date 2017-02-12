@@ -61,8 +61,7 @@
         policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
         policy.allowInvalidCertificates = YES;
         policy.validatesDomainName = NO;
-        policy.validatesCertificateChain = NO;
-        policy.pinnedCertificates = @[certificate];
+        policy.pinnedCertificates = [NSSet setWithObject:certificate];
     }
     else if (certificateName && !certificatePath)
     {

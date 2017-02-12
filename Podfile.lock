@@ -1,27 +1,21 @@
 PODS:
-  - AFNetworking (2.5.4):
-    - AFNetworking/NSURLConnection (= 2.5.4)
-    - AFNetworking/NSURLSession (= 2.5.4)
-    - AFNetworking/Reachability (= 2.5.4)
-    - AFNetworking/Security (= 2.5.4)
-    - AFNetworking/Serialization (= 2.5.4)
-    - AFNetworking/UIKit (= 2.5.4)
-  - AFNetworking/NSURLConnection (2.5.4):
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.4):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.4)
-  - AFNetworking/Security (2.5.4)
-  - AFNetworking/Serialization (2.5.4)
-  - AFNetworking/UIKit (2.5.4):
-    - AFNetworking/NSURLConnection
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - FBSnapshotTestCase/Core (2.1.4)
-  - OCMock (3.3.1)
+  - OCMock (3.4)
   - OHHTTPStubs (5.2.3):
     - OHHTTPStubs/Default (= 5.2.3)
   - OHHTTPStubs/Core (5.2.3)
@@ -36,7 +30,7 @@ PODS:
     - OHHTTPStubs/Core
   - OHHTTPStubs/OHPathHelpers (5.2.3)
   - RFFeatureToggle (1.0.4):
-    - AFNetworking (< 2.6)
+    - AFNetworking
 
 DEPENDENCIES:
   - FBSnapshotTestCase/Core
@@ -49,11 +43,11 @@ EXTERNAL SOURCES:
     :path: "."
 
 SPEC CHECKSUMS:
-  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   FBSnapshotTestCase: '094f9f314decbabe373b87cc339bea235a63e07a'
-  OCMock: f3f61e6eaa16038c30caa5798c5e49d3307b6f22
+  OCMock: 35ae71d6a8fcc1b59434d561d1520b9dd4f15765
   OHHTTPStubs: e238cd5b66d8efa51c861db45895de8fe079f4a7
-  RFFeatureToggle: 60733253c87fc2d7dbe050c369c27f6785e7af30
+  RFFeatureToggle: '037459dd61f31cf3e811176c15b495e8b9c17c45'
 
 PODFILE CHECKSUM: 39671b810ffb37af9388f75ccec19f43b7481c71
 

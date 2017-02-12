@@ -12,14 +12,14 @@
     "tag": "1.0.4"
   },
   "platforms": {
-    "ios": "7.0"
+    "ios": "8.0"
   },
   "requires_arc": true,
   "screenshots": "https://raw.githubusercontent.com/raumfeld/RFFeatureToggle/master/Docs/RFFeatureTableViewController.gif",
   "source_files": "RFFeatureToggle/Classes/**/*",
   "dependencies": {
     "AFNetworking": [
-      "< 2.6"
+
     ]
   }
 }
