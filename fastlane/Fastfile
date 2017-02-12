@@ -8,6 +8,7 @@ lane :test do |options|
   clear_derived_data
   
   scan(
+    derived_data_path: "~/Library/Developer/Xcode/DerivedData",
     scheme: APP_SCHEME,
     output_types: "html, junit",
     devices: ["iPhone 5s"],
