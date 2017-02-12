@@ -1,7 +1,8 @@
 # RFFeatureToggle
 
 [![CI Status](http://img.shields.io/travis/raumfeld/RFFeatureToggle.svg?style=flat)](https://travis-ci.org/raumfeld/RFFeatureToggle)
-[![codecov.io](https://codecov.io/github/raumfeld/RFFeatureToggle/coverage.svg?branch=master)](https://codecov.io/github/raumfeld/RFFeatureToggle/coverage.svg?branch=master)
+[![codecov](https://codecov.io/gh/raumfeld/RFFeatureToggle/branch/master/graph/badge.svg)](https://codecov.io/gh/raumfeld/RFFeatureToggle)
+[![Documentation](https://img.shields.io/cocoapods/metrics/doc-percent/RFSVG.svg)](http://cocoadocs.org/docsets/RFSVG)
 [![Version](https://img.shields.io/cocoapods/v/RFFeatureToggle.svg?style=flat)](http://cocoapods.org/pods/RFFeatureToggle)
 [![License](https://img.shields.io/cocoapods/l/RFFeatureToggle.svg?style=flat)](http://cocoapods.org/pods/RFFeatureToggle)
 [![Platform](https://img.shields.io/cocoapods/p/RFFeatureToggle.svg?style=flat)](http://cocoapods.org/pods/RFFeatureToggle)
@@ -74,7 +75,7 @@ Alternatively, to switch to custom URL that was not provided on initialization, 
 Calling `[RFFeatureToggleDefaults sharedDefaults].mode)]` will return the mode it's operating in (production, staging, custom).
 
 ### Fine tuning
-For fine tuning check the [CococaDocs](http://cocoadocs.org/docsets/RFFeatureToggle). 
+For fine tuning check the [CocoaDocs](http://cocoadocs.org/docsets/RFFeatureToggle). 
 
 ### Inspection
 To inspect the features, there are convenience methods in `RFFeature` class:
@@ -163,7 +164,7 @@ pod "RFFeatureToggle"
 
 ## Documentation
 
-For a complete documentation see [CococaDocs](http://cocoadocs.org/docsets/RFFeatureToggle).
+For a complete documentation see [CocoaDocs](http://cocoadocs.org/docsets/RFFeatureToggle).
 
 ## License
 
