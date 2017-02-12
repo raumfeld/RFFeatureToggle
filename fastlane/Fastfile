@@ -12,15 +12,6 @@ lane :test do |options|
     output_types: "html, junit",
     devices: ["iPhone 5s"],
   )
-
-  slather(
-    build_directory: ENV["DERIVED_DATA_PATH"],
-    scheme: APP_SCHEME,
-    workspace: APP_WORKSPACE,
-    proj: APP_PROJECT,
-    cobertura_xml: true,
-    output_directory: "coverage"
-  )
   
 end
 
