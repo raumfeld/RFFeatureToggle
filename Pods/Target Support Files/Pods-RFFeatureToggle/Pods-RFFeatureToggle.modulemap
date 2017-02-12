@@ -1,0 +1,6 @@
+framework module Pods_RFFeatureToggle {
+  umbrella header "Pods-RFFeatureToggle-umbrella.h"
+
+  export *
+  module * { export * }
+}

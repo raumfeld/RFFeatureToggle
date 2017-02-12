@@ -1,15 +1,12 @@
-# references:
-# * http://www.objc.io/issue-6/travis-ci.html
-# * https://github.com/supermarin/xcpretty#usage
-
 language: objective-c
 cache: cocoapods
-podfile: Example/Podfile
-# before_install:
-# - gem install cocoapods # Since Travis is not always on latest version
-# - pod install --project-directory=Example
+osx_image: xcode8.2
+
+install:
+- gem install slather
+
 script:
-- set -o pipefail && xcodebuild test -workspace Example/RFFeatureToggle.xcworkspace -scheme RFFeatureToggle-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty
-- pod lib lint
+- ./fastlane/travis.sh
+
 after_success:
-- bash <(curl -s https://codecov.io/bash)
+-  bash <(curl -s https://codecov.io/bash) -f coverage/cobertura.xml -X coveragepy -X gcov -X xcode

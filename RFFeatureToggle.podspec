@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.requires_arc     = true
   s.screenshot       = "https://raw.githubusercontent.com/raumfeld/RFFeatureToggle/master/Docs/RFFeatureTableViewController.gif"
 
-  s.source_files = 'Pod/Classes/**/*'
+  s.source_files = 'RFFeatureToggle/Classes/**/*'
 
   s.dependency 'AFNetworking', '< 2.6'
 end
