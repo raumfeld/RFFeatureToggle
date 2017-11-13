@@ -75,8 +75,10 @@
 
 - (void)handleError:(NSError *)error
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"An error occurred", @"Error message title") message:error.localizedDescription delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
-    [alertView show];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"An error occurred", @"Error message title") message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"") style:UIAlertActionStyleDefault handler:nil];
+    [alertController addAction:action];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)dismiss:(UIBarButtonItem *)sender

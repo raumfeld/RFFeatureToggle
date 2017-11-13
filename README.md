@@ -151,7 +151,7 @@ If it's available, RFFeatureToggle will direct its logs to [CocoaLumberjack](htt
 ## Requirements
 
 * A server that returns a list of features in the specified format. See [Fixtures](Example/Tests/Fixtures) for an example of the response.
-* iOS7+
+* iOS9.3+
 
 ## Installation
 

@@ -72,7 +72,9 @@
         policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
     }
     
-    [RFFeatureAPIClient sharedClient].securityPolicy = policy;
+    if (policy) {
+        [RFFeatureAPIClient sharedClient].securityPolicy = policy;
+    }
 }
 
 @end

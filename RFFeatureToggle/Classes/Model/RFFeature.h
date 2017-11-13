@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
    `RFFeature` is a model object for a feature collected from the API.
     Conforms to `NSCoding` protocol.
@@ -46,3 +48,5 @@
 - (NSString *)recursiveDescription;
 
 @end
+
+NS_ASSUME_NONNULL_END

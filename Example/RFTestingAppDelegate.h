@@ -10,4 +10,6 @@
 
 @interface RFTestingAppDelegate : UIResponder
 
+@property (strong, nonatomic) UIWindow *window;
+
 @end

@@ -9,6 +9,8 @@
 #import "RFFeature.h"
 #import "RFFeatureAPIClient.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
    `RFFeature+API` is a model-controller type extension of `RFFeature` that makes all API calls related to features.
  */
@@ -30,3 +32,5 @@
 + (BOOL)isEnabled:(NSString *)featureName;
 
 @end
+
+NS_ASSUME_NONNULL_END

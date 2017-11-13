@@ -8,6 +8,8 @@
 
 #import "RFFeature.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
    `RFFeature+Mapping` is an extension of `RFFeature` that maps JSON to `RFFeature` objects.
  */
@@ -31,3 +33,5 @@
 + (NSArray *)objectsFromJSON:(id)object;
 
 @end
+
+NS_ASSUME_NONNULL_END

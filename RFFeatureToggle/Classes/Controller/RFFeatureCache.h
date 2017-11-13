@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "RFFeature.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
    `RFFeatureCache` is a singleton that loads and persists a set of `RFFeature` instances to `NSUserDefaults` and handles automatic refresh if enabled.
  */
@@ -32,14 +34,14 @@
 
    @return    An array of `RFFeature` instances.
  */
-+ (NSArray *)allFeatures;
++ (nullable NSArray *)allFeatures;
 
 /**
    Persists an array of `RFFeature` instances to `NSUserDefaults`.
 
    @param features    An array of `RFFeature` instances.
  */
-+ (void)persistFeatures:(NSArray *)features;
++ (void)persistFeatures:(nullable NSArray *)features;
 
 /**
    Compares stored date of last successful update with current date and returns the difference.
@@ -49,3 +51,5 @@
 + (NSTimeInterval)timeIntervalSinceLastSuccessfulUpdate;
 
 @end
+
+NS_ASSUME_NONNULL_END

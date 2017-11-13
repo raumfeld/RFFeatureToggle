@@ -9,6 +9,8 @@
 #import "RFFeatureToggleDefaults.h"
 #import "RFFeature.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
    Defines "levels" of logging that will be used as values in a bitmask that filters log messages.
    @since Available in v1.0.2 and later.
@@ -98,3 +100,5 @@ typedef NS_ENUM (NSUInteger, RFFeatureToggleLoggingLevel)
 + (void) setLoggingLevel:(RFFeatureToggleLoggingLevel)level;
 
 @end
+
+NS_ASSUME_NONNULL_END

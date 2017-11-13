@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 @class RFFeature;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
    `RFFeatureTableViewController` is a table view controller that displays all the loaded features in a master-detail fashion.
    - Feature list can be refreshed via refresh control.
@@ -27,7 +29,7 @@
 
    @param sender   A refresh control instance if avaliable
  */
-- (void)refresh:(UIRefreshControl *)sender;
+- (void)refresh:(nullable UIRefreshControl *)sender;
 
 /**
    Handles API error
@@ -37,3 +39,5 @@
 - (void)handleError:(NSError *)error;
 
 @end
+
+NS_ASSUME_NONNULL_END

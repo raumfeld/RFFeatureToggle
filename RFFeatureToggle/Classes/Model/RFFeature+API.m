@@ -19,13 +19,14 @@
     NSString *url = [[RFFeatureToggleDefaults sharedDefaults].baseURLString stringByAppendingString:[RFFeatureToggleDefaults sharedDefaults].endpoint];
     [[RFFeatureAPIClient sharedClient] GET:url
                                 parameters:nil
-                                   success:^(NSURLSessionDataTask *__unused task, id JSON) {
-                                       RFLogDebug(@"Request to '%@' returned:\n%@",url,JSON);
-                                       NSArray *objects = [RFFeature objectsFromJSON:JSON];
+                                  progress:nil
+                                   success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                                       RFLogDebug(@"Request to '%@' returned:\n%@",url,responseObject);
+                                       NSArray *objects = [RFFeature objectsFromJSON:responseObject];
                                        [RFFeatureCache persistFeatures:objects];
                                        return block(YES, nil);
                                    }
-                                   failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
+                                   failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                                        RFLogError(@"Error: request to '%@' returned:\n%@",url,error);
                                        return block(NO, error);
                                    }];

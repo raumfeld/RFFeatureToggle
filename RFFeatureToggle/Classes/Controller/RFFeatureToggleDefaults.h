@@ -15,6 +15,8 @@ typedef NS_ENUM (NSUInteger, RFFeatureToggleMode)
     RFFeatureToggleModeCustom         /// Custom base URL is set
 };
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  Setup parameters dictionary keys.
  */
@@ -91,3 +93,5 @@ extern NSString *const RFFeatureToggleUpdatedNotification;
 - (void) switchToCustomModeWithBaseURLString:(NSString *)baseURLString;
 
 @end
+
+NS_ASSUME_NONNULL_END

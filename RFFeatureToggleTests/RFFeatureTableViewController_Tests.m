@@ -15,7 +15,7 @@
 
 @interface RFFeatureTableViewController_Tests : FBSnapshotTestCase
 
-@property (nonatomic, strong) RFFeatureTableViewController *sut;
+@property (nonatomic, weak) RFFeatureTableViewController *sut;
 
 @end
 
@@ -28,11 +28,8 @@
     NSDictionary *params = @{kRFFeatureToggleBaseURLStringForStagingKey : @"https://staging/",
                              kRFFeatureToggleBaseURLStringForProductionKey : @"https://production/"};
     [RFFeatureToggleDefaults sharedDefaultsWithMode:RFFeatureToggleModeProduction params:params];
-
-    RFFeatureTableViewController *vc = [[RFFeatureTableViewController alloc] initWithNibName:nil bundle:nil];
-    [vc viewDidLoad];
-    vc.view.frame = CGRectMake(0, 0, 320, 568);
-    self.sut = vc;
+    
+    self.sut = (RFFeatureTableViewController *)[[[[UIApplication sharedApplication] delegate] window] rootViewController];
 }
 
 - (void)testRootTableView
@@ -91,21 +88,14 @@
 
 - (void)testAlertViewIsShown
 {
-    id mockAlertView = [OCMockObject mockForClass:[UIAlertView class]];
-    [[[mockAlertView stub] andReturn:mockAlertView] alloc];
-    (void)[[[mockAlertView expect] andReturn:mockAlertView]
-           initWithTitle:NSLocalizedString(@"An error occurred", @"Error message title")
-           message:@"Test error description"
-           delegate:OCMOCK_ANY
-           cancelButtonTitle:NSLocalizedString(@"OK", @"")
-           otherButtonTitles:OCMOCK_ANY, nil];
-    [[mockAlertView expect] show];
+    id mockAlertController = OCMClassMock([UIAlertController class]);
     
     NSError *error = [NSError errorWithDomain:@"TestDomain" code:404 userInfo:@{NSLocalizedDescriptionKey:@"Test error description"}];
     [self.sut handleError:error];
     
-    [mockAlertView verify];
-    [mockAlertView stopMocking];
+    OCMVerify([mockAlertController alertControllerWithTitle:OCMOCK_ANY message:@"Test error description" preferredStyle:UIAlertControllerStyleAlert]);
+    
+    [mockAlertController stopMocking];
 }
 
 - (void)testPushSubfeaturesTableView
@@ -215,8 +205,6 @@
     [self.sut viewWillAppear:YES];
 
     XCTAssertNil(self.sut.refreshControl);
-
-    self.sut.feature = nil;
 }
 
 @end
