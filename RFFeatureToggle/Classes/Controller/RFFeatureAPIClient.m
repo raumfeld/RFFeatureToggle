@@ -61,15 +61,14 @@
         policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
         policy.allowInvalidCertificates = YES;
         policy.validatesDomainName = NO;
-        if ([policy.pinnedCertificates isKindOfClass:[NSArray class]]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wincompatible-pointer-types"
+        if ([policy.pinnedCertificates isKindOfClass:[NSArray class]]) {
             policy.pinnedCertificates = @[certificate];
-
-#pragma clang diagnostic pop
         } else {
             policy.pinnedCertificates = [NSSet setWithObject:certificate];
         }
+#pragma clang diagnostic pop
     }
     else if (certificateName && !certificatePath)
     {

@@ -17,6 +17,8 @@
 + (void)fetchFeaturesUsingBlock:(RFAPIResultBlock)block
 {
     NSString *url = [[RFFeatureToggleDefaults sharedDefaults].baseURLString stringByAppendingString:[RFFeatureToggleDefaults sharedDefaults].endpoint];
+    NSDictionary *parameters = nil;
+    void (^progress)(NSProgress *) = nil;
     void (^success)(NSURLSessionDataTask *, id) = ^(NSURLSessionDataTask *task, id _Nullable responseObject) {
         RFLogDebug(@"Request to '%@' returned:\n%@",url,responseObject);
         NSArray *objects = [RFFeature objectsFromJSON:responseObject];
@@ -27,17 +29,30 @@
         RFLogError(@"Error: request to '%@' returned:\n%@",url,error);
         return block(NO, error);
     };
-    if ([[RFFeatureAPIClient sharedClient] respondsToSelector:@selector(GET:parameters:progress:success:failure:)]) {
-        [[RFFeatureAPIClient sharedClient] GET:url
-                                    parameters:nil
-                                      progress:nil
-                                       success:success
-                                       failure:failure];
-    } else {
+    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+    SEL selectorInAFNetworkingVersion3 = @selector(GET:parameters:progress:success:failure:);
+#pragma clang diagnostic pop
+    if ([[RFFeatureAPIClient sharedClient] respondsToSelector:selectorInAFNetworkingVersion3])
+    {
+        NSMethodSignature *signature = [[RFFeatureAPIClient sharedClient] methodSignatureForSelector:selectorInAFNetworkingVersion3];
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+        [invocation setTarget:[RFFeatureAPIClient sharedClient]];
+        [invocation setSelector:selectorInAFNetworkingVersion3];
+        [invocation setArgument:&url atIndex:2];
+        [invocation setArgument:&parameters atIndex:3];
+        [invocation setArgument:&progress atIndex:4];
+        [invocation setArgument:&success atIndex:5];
+        [invocation setArgument:&failure atIndex:6];
+        [invocation invoke];
+    }
+    else
+    {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
         [[RFFeatureAPIClient sharedClient] GET:url
-                                    parameters:nil
+                                    parameters:parameters
                                        success:success
                                        failure:failure];
 #pragma clang diagnostic pop
