@@ -17,19 +17,31 @@
 + (void)fetchFeaturesUsingBlock:(RFAPIResultBlock)block
 {
     NSString *url = [[RFFeatureToggleDefaults sharedDefaults].baseURLString stringByAppendingString:[RFFeatureToggleDefaults sharedDefaults].endpoint];
-    [[RFFeatureAPIClient sharedClient] GET:url
-                                parameters:nil
-                                  progress:nil
-                                   success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                                       RFLogDebug(@"Request to '%@' returned:\n%@",url,responseObject);
-                                       NSArray *objects = [RFFeature objectsFromJSON:responseObject];
-                                       [RFFeatureCache persistFeatures:objects];
-                                       return block(YES, nil);
-                                   }
-                                   failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                                       RFLogError(@"Error: request to '%@' returned:\n%@",url,error);
-                                       return block(NO, error);
-                                   }];
+    void (^success)(NSURLSessionDataTask *, id) = ^(NSURLSessionDataTask *task, id _Nullable responseObject) {
+        RFLogDebug(@"Request to '%@' returned:\n%@",url,responseObject);
+        NSArray *objects = [RFFeature objectsFromJSON:responseObject];
+        [RFFeatureCache persistFeatures:objects];
+        return block(YES, nil);
+    };
+    void (^failure)(NSURLSessionDataTask *, NSError *) = ^(NSURLSessionDataTask *task, NSError *error) {
+        RFLogError(@"Error: request to '%@' returned:\n%@",url,error);
+        return block(NO, error);
+    };
+    if ([[RFFeatureAPIClient sharedClient] respondsToSelector:@selector(GET:parameters:progress:success:failure:)]) {
+        [[RFFeatureAPIClient sharedClient] GET:url
+                                    parameters:nil
+                                      progress:nil
+                                       success:success
+                                       failure:failure];
+    } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        [[RFFeatureAPIClient sharedClient] GET:url
+                                    parameters:nil
+                                       success:success
+                                       failure:failure];
+#pragma clang diagnostic pop
+    }
 }
 
 + (BOOL)isEnabled:(NSString *)featureName

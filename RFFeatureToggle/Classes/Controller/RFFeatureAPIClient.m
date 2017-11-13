@@ -61,20 +61,22 @@
         policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
         policy.allowInvalidCertificates = YES;
         policy.validatesDomainName = NO;
-        policy.pinnedCertificates = [NSSet setWithObject:certificate];
+        if ([policy.pinnedCertificates isKindOfClass:[NSArray class]]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincompatible-pointer-types"
+            policy.pinnedCertificates = @[certificate];
+
+#pragma clang diagnostic pop
+        } else {
+            policy.pinnedCertificates = [NSSet setWithObject:certificate];
+        }
     }
     else if (certificateName && !certificatePath)
     {
         RFLogError(@"Error: Certificate with name %@ not found.",certificateName);
     }
-    else
-    {
-        policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
-    }
     
-    if (policy) {
-        [RFFeatureAPIClient sharedClient].securityPolicy = policy;
-    }
+    [RFFeatureAPIClient sharedClient].securityPolicy = policy ?: [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
 }
 
 @end
