@@ -18,6 +18,9 @@
     
     NSDictionary *params = @{kRFFeatureToggleBaseURLStringForStagingKey : @"https://staging/",
                              kRFFeatureToggleBaseURLStringForProductionKey : @"https://production/"};
+    RFFeatureToggle.userDefaults = ^{
+        return NSUserDefaults.standardUserDefaults;
+    };
     [RFFeatureToggleDefaults sharedDefaultsWithMode:RFFeatureToggleModeProduction params:params];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
