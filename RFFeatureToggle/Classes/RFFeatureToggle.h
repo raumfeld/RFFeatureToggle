@@ -63,6 +63,8 @@ typedef NS_ENUM (NSUInteger, RFFeatureToggleLoggingLevel)
 
 @interface RFFeatureToggle : NSObject
 
+@property (class, nonatomic, copy, nonnull) NSUserDefaults *(^userDefaults)();
+
 /**
    Returns an enabled value for feature with name. For features that have subfeatures, accepts a dot separated synthax like "feature.subfeature.subsubfeature".
 
