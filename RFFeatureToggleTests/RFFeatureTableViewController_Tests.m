@@ -7,13 +7,12 @@
 //
 
 #import <XCTest/XCTest.h>
-#import <FBSnapshotTestCase/FBSnapshotTestCase.h>
 #import "RFFeatureToggleTest.h"
 #import "RFFeatureToggle.h"
 #import "RFFeatureTableViewController.h"
 #import "RFFeature+API.h"
 
-@interface RFFeatureTableViewController_Tests : FBSnapshotTestCase
+@interface RFFeatureTableViewController_Tests : XCTestCase
 
 @property (nonatomic, weak) RFFeatureTableViewController *sut;
 
@@ -28,35 +27,8 @@
     NSDictionary *params = @{kRFFeatureToggleBaseURLStringForStagingKey : @"https://staging/",
                              kRFFeatureToggleBaseURLStringForProductionKey : @"https://production/"};
     [RFFeatureToggleDefaults sharedDefaultsWithMode:RFFeatureToggleModeProduction params:params];
-    
+
     self.sut = (RFFeatureTableViewController *)[[[[UIApplication sharedApplication] delegate] window] rootViewController];
-}
-
-- (void)testRootTableView
-{
-    id <OHHTTPStubsDescriptor> stub = [RFFeatureToggleTest stubForSuccess];
-
-    XCTestExpectation *expectation = [self expectationWithDescription:@"Fetch features: success"];
-
-    [self.sut viewWillAppear:YES];
-    [self.sut refresh:nil];
-
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [expectation fulfill];
-    });
-
-    [self waitForExpectationsWithTimeout:1.0f handler:^(NSError *error) {
-        XCTAssertNil(error);
-        
-        FBSnapshotVerifyView(self.sut.view, (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? @"iPad" : @"iPhone");
-        XCTAssertTrue([self.sut tableView:self.sut.tableView numberOfRowsInSection:0] == 10,@"There should be 10 rows");
-        NSUInteger randomIndex = arc4random() % 10;
-        NSIndexPath *randomIndexPath = [NSIndexPath indexPathForRow:randomIndex inSection:0];
-        UITableViewCell *cell = [self.sut tableView:self.sut.tableView cellForRowAtIndexPath:randomIndexPath];
-        XCTAssertNotNil(cell,@"Cell should not be nil");
-    }];
-
-    [OHHTTPStubs removeStub:stub];
 }
 
 - (void)testRootTableViewWithError
