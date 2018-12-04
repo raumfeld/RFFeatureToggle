@@ -9,6 +9,7 @@
 #import "RFFeatureCache.h"
 #import "RFFeature+API.h"
 #import "RFFeatureToggleDefaults.h"
+#import "RFFeatureToggle.h"
 
 static NSString *const RFFeatureTogglePlistNameKey = @"RFFeatureTogglePlistNameKey";
 static NSString *const RFFeatureToggleLastUpdatedPlistNameKey = @"RFFeatureToggleLastUpdatedPlistNameKey";
@@ -63,6 +64,12 @@ static RFFeatureCache *sharedCache;
                                                   object:nil];
 }
 
++ (NSUserDefaults *)userDefaults
+{
+    __auto_type userDefaults = RFFeatureToggle.userDefaults();
+    return userDefaults;
+}
+
 + (void)refreshFeatures
 {
     [[RFFeatureCache sharedCache] refreshFeatures];
@@ -70,7 +77,7 @@ static RFFeatureCache *sharedCache;
 
 + (NSArray *)allFeatures
 {
-    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:RFFeatureTogglePlistNameKey];
+    NSData *data = [self.userDefaults objectForKey:RFFeatureTogglePlistNameKey];
     if (!data) {
         return nil;
     }
@@ -80,13 +87,13 @@ static RFFeatureCache *sharedCache;
 
 + (void)storeLastUpdateDate:(NSDate *)date
 {
-    [[NSUserDefaults standardUserDefaults] setObject:date forKey:RFFeatureToggleLastUpdatedPlistNameKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [self.userDefaults setObject:date forKey:RFFeatureToggleLastUpdatedPlistNameKey];
+    [self.userDefaults synchronize];
 }
 
 + (NSDate *)lastUpdateDate
 {
-    NSDate *date = [[NSUserDefaults standardUserDefaults] objectForKey:RFFeatureToggleLastUpdatedPlistNameKey];
+    NSDate *date = [self.userDefaults objectForKey:RFFeatureToggleLastUpdatedPlistNameKey];
     return date;
 }
 
@@ -100,8 +107,8 @@ static RFFeatureCache *sharedCache;
     NSSet *set1 = [NSSet setWithArray:[self allFeatures]];
     NSSet *set2 = [NSSet setWithArray:features];
 
-    [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:features] forKey:RFFeatureTogglePlistNameKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [self.userDefaults setObject:[NSKeyedArchiver archivedDataWithRootObject:features] forKey:RFFeatureTogglePlistNameKey];
+    [self.userDefaults synchronize];
     [self storeLastUpdateDate:[NSDate date]];
     
     if (![set1 isEqualToSet:set2])

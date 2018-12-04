@@ -18,7 +18,6 @@ end
 target "RFFeatureToggleTests" do
     shared_pods
     
-    pod "FBSnapshotTestCase/Core"
     pod "OHHTTPStubs"
     pod "OCMock"
 end
