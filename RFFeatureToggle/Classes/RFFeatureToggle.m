@@ -18,16 +18,16 @@ static RFFeatureToggleLoggingLevel kRFFeatureToggleLoggingLevel = RFFeatureToggl
 
 @implementation RFFeatureToggle
 
-static NSUserDefaults *(^_userDefaults)() = ^{
+static NSUserDefaults *(^_userDefaults)(void) = ^{
     return [NSUserDefaults standardUserDefaults];
 };
 
-+ (NSUserDefaults * _Nonnull (^)())userDefaults
++ (NSUserDefaults * _Nonnull (^)(void))userDefaults
 {
     return _userDefaults;
 }
 
-+ (void)setUserDefaults:(NSUserDefaults * _Nonnull (^)())userDefaults
++ (void)setUserDefaults:(NSUserDefaults * _Nonnull (^)(void))userDefaults
 {
     _userDefaults = userDefaults;
 }
