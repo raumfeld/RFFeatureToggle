@@ -11,7 +11,7 @@ lane :test do |options|
     derived_data_path: "~/Library/Developer/Xcode/DerivedData",
     scheme: APP_SCHEME,
     output_types: "html, junit",
-    devices: ["iPhone 5s"],
+    devices: ["iPhone X"],
   )
   
 end
