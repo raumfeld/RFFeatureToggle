@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2009-2016 Erik Doernenburg and contributors
+ *  Copyright (c) 2009-2021 Erik Doernenburg and contributors
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may
  *  not use these files except in compliance with the License. You may obtain
@@ -15,24 +15,27 @@
  */
 
 #import "OCObserverMockObject.h"
-#import "OCMObserverRecorder.h"
-#import "OCMLocation.h"
 #import "OCMFunctionsPrivate.h"
+#import "OCMLocation.h"
+#import "OCMMacroState.h"
+#import "OCMObserverRecorder.h"
 
-
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-implementations"
 @implementation OCObserverMockObject
+#pragma clang diagnostic pop
 
-#pragma mark  Initialisers, description, accessors, etc.
+#pragma mark Initialisers, description, accessors, etc.
 
 - (id)init
 {
-    if ((self = [super init]))
+    if((self = [super init]))
     {
         recorders = [[NSMutableArray alloc] init];
         centers = [[NSMutableArray alloc] init];
     }
-	
-	return self;
+
+    return self;
 }
 
 - (id)retain
@@ -45,13 +48,13 @@
     for(NSNotificationCenter *c in centers)
         [c removeObserver:self];
     [centers release];
-	[recorders release];
-	[super dealloc];
+    [recorders release];
+    [super dealloc];
 }
 
 - (NSString *)description
 {
-	return @"OCMockObserver";
+    return @"OCObserverMockObject";
 }
 
 - (void)setExpectationOrderMatters:(BOOL)flag
@@ -68,16 +71,16 @@
 }
 
 
-#pragma mark  Public API
+#pragma mark Public API
 
 - (id)expect
 {
-	OCMObserverRecorder *recorder = [[[OCMObserverRecorder alloc] init] autorelease];
+    OCMObserverRecorder *recorder = [[[OCMObserverRecorder alloc] init] autorelease];
     @synchronized(recorders)
     {
         [recorders addObject:recorder];
     }
-	return recorder;
+    return recorder;
 }
 
 - (void)verify
@@ -92,40 +95,56 @@
         if([recorders count] == 1)
         {
             NSString *description = [NSString stringWithFormat:@"%@: expected notification was not observed: %@",
-             [self description], [[recorders lastObject] description]];
+                                              [self description], [[recorders lastObject] description]];
             OCMReportFailure(location, description);
         }
         else if([recorders count] > 0)
         {
             NSString *description = [NSString stringWithFormat:@"%@ : %@ expected notifications were not observed.",
-             [self description], @([recorders count])];
+                                              [self description], @([recorders count])];
             OCMReportFailure(location, description);
         }
     }
 }
 
 
-#pragma mark  Receiving recording requests via macro
+#pragma mark Receiving recording requests via macro
+
+// This is a bit of a hack. The methods simply assume that when they are called from within a macro that it's
+// the OCMExpect macro. That creates a recorder for mock objects, which we cannot use here. So, we overwrite
+// it with a newly allocated recorder.
 
 - (NSNotification *)notificationWithName:(NSString *)name object:(id)sender
 {
-    return [[self expect] notificationWithName:name object:sender];
+    if([OCMMacroState globalState] != nil)
+    {
+        id recorder = [self expect];
+        [[OCMMacroState globalState] setRecorder:recorder];
+        return [recorder notificationWithName:name object:sender];
+    }
+    return nil;
 }
 
 - (NSNotification *)notificationWithName:(NSString *)name object:(id)sender userInfo:(NSDictionary *)userInfo
 {
-    return [[self expect] notificationWithName:name object:sender userInfo:userInfo];
+    if([OCMMacroState globalState] != nil)
+    {
+        id recorder = [self expect];
+        [[OCMMacroState globalState] setRecorder:recorder];
+        return [recorder notificationWithName:name object:sender userInfo:userInfo];
+    }
+    return nil;
 }
 
 
-#pragma mark  Receiving notifications
+#pragma mark Receiving notifications
 
 - (void)handleNotification:(NSNotification *)aNotification
 {
     @synchronized(recorders)
     {
         NSUInteger i, limit;
-        
+
         limit = expectationOrderMatters ? 1 : [recorders count];
         for(i = 0; i < limit; i++)
         {
@@ -136,8 +155,9 @@
             }
         }
     }
-	[NSException raise:NSInternalInconsistencyException format:@"%@: unexpected notification observed: %@", [self description], 
-	  [aNotification description]];
+    [NSException raise:NSInternalInconsistencyException
+                format:@"%@: unexpected notification observed: %@", [self description],
+                [aNotification description]];
 }
 
 

@@ -1,5 +1,5 @@
 project 'RFFeatureToggle.xcodeproj'
-platform :ios, '9.3'
+platform :ios, '12.0'
 use_frameworks!
 inhibit_all_warnings!
 

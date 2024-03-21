@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2005-2016 Erik Doernenburg and contributors
+ *  Copyright (c) 2005-2021 Erik Doernenburg and contributors
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may
  *  not use these files except in compliance with the License. You may obtain
@@ -15,67 +15,84 @@
  */
 
 #import <objc/runtime.h>
-#import "OCClassMockObject.h"
+#import "NSMethodSignature+OCMAdditions.h"
 #import "NSObject+OCMAdditions.h"
+#import "OCClassMockObject.h"
 #import "OCMFunctionsPrivate.h"
 #import "OCMInvocationStub.h"
-#import "NSMethodSignature+OCMAdditions.h"
+
+@interface NSObject (OCMClassMockingSupport)
++ (BOOL)supportsMocking:(NSString **)reason;
+@end
+
 
 @implementation OCClassMockObject
 
-#pragma mark  Initialisers, description, accessors, etc.
+#pragma mark Initialisers, description, accessors, etc.
 
 - (id)initWithClass:(Class)aClass
 {
-    NSParameterAssert(aClass != nil);
-	[super init];
-	mockedClass = aClass;
+    [self assertClassIsSupported:aClass];
+    [super init];
+    mockedClass = aClass;
     [self prepareClassForClassMethodMocking];
-	return self;
+    return self;
 }
 
 - (void)dealloc
 {
-	[self stopMocking];
-	[super dealloc];
+    [self stopMocking];
+    [super dealloc];
 }
 
 - (NSString *)description
 {
-	return [NSString stringWithFormat:@"OCMockObject(%@)", NSStringFromClass(mockedClass)];
+    return [NSString stringWithFormat:@"OCClassMockObject(%@)", NSStringFromClass(mockedClass)];
 }
 
 - (Class)mockedClass
 {
-	return mockedClass;
+    return mockedClass;
 }
 
-#pragma mark  Extending/overriding superclass behaviour
+- (void)assertClassIsSupported:(Class)aClass
+{
+    if(aClass == Nil)
+        [NSException raise:NSInvalidArgumentException format:@"Class cannot be Nil."];
+
+    if([aClass respondsToSelector:@selector(supportsMocking:)])
+    {
+        NSString *reason = nil;
+        if(![aClass supportsMocking:&reason])
+            [NSException raise:NSInvalidArgumentException format:@"Class %@ does not support mocking: %@", aClass, reason];
+    }
+}
+
+#pragma mark Extending/overriding superclass behaviour
 
 - (void)stopMocking
 {
     if(originalMetaClass != nil)
     {
-        /* The mocked class has the meta class of a dynamically created subclass as its meta class,
-           but we need a reference to the subclass to dispose it. Asking the meta class for its
-           class name returns the actual class name, which we can then use to look up the class...
-        */
-        const char *createdSubclassName = object_getClassName(mockedClass);
-        Class createdSubclass = objc_lookUpClass(createdSubclassName);
-
-        [self restoreMetaClass];
-
-        objc_disposeClassPair(createdSubclass);
+        [self stopMockingClassMethods];
+    }
+    if(classCreatedForNewMetaClass != nil)
+    {
+        OCMDisposeSubclass(classCreatedForNewMetaClass);
+        classCreatedForNewMetaClass = nil;
     }
     [super stopMocking];
 }
 
-- (void)restoreMetaClass
+
+- (void)stopMockingClassMethods
 {
     OCMSetAssociatedMockForClass(nil, mockedClass);
     object_setClass(mockedClass, originalMetaClass);
     originalMetaClass = nil;
+    /* created meta class will be disposed later because partial mocks create another subclass depending on it */
 }
+
 
 - (void)addStub:(OCMInvocationStub *)aStub
 {
@@ -85,7 +102,7 @@
 }
 
 
-#pragma mark  Class method mocking
+#pragma mark Class method mocking
 
 - (void)prepareClassForClassMethodMocking
 {
@@ -93,17 +110,21 @@
     if([[mockedClass class] isSubclassOfClass:[NSString class]] || [[mockedClass class] isSubclassOfClass:[NSArray class]])
         return;
 
+    /* trying to replace class methods on NSManagedObject and subclasses of it doesn't work; see #339 */
+    if([mockedClass isSubclassOfClass:objc_getClass("NSManagedObject")])
+        return;
+
     /* if there is another mock for this exact class, stop it */
     id otherMock = OCMGetAssociatedMockForClass(mockedClass, NO);
     if(otherMock != nil)
-        [otherMock restoreMetaClass];
+        [otherMock stopMockingClassMethods];
 
     OCMSetAssociatedMockForClass(self, mockedClass);
 
     /* dynamically create a subclass and use its meta class as the meta class for the mocked class */
-    Class subclass = OCMCreateSubclass(mockedClass, mockedClass);
+    classCreatedForNewMetaClass = OCMCreateSubclass(mockedClass, mockedClass);
     originalMetaClass = object_getClass(mockedClass);
-    id newMetaClass = object_getClass(subclass);
+    id newMetaClass = object_getClass(classCreatedForNewMetaClass);
 
     /* create a dummy initialize method */
     Method myDummyInitializeMethod = class_getInstanceMethod([self mockObjectClass], @selector(initializeForClassObject));
@@ -118,21 +139,17 @@
     IMP myForwardIMP = method_getImplementation(myForwardMethod);
     class_addMethod(newMetaClass, @selector(forwardInvocation:), myForwardIMP, method_getTypeEncoding(myForwardMethod));
 
-
     /* adding forwarder for most class methods (instance methods on meta class) to allow for verify after run */
-    NSArray *methodBlackList = @[@"class", @"forwardingTargetForSelector:", @"methodSignatureForSelector:", @"forwardInvocation:", @"isBlock",
-            @"instanceMethodForwarderForSelector:", @"instanceMethodSignatureForSelector:"];
-    [NSObject enumerateMethodsInClass:originalMetaClass usingBlock:^(Class cls, SEL sel) {
+    NSArray *methodsNotToForward = @[
+        @"class", @"forwardingTargetForSelector:", @"methodSignatureForSelector:", @"forwardInvocation:", @"isBlock",
+        @"instanceMethodForwarderForSelector:", @"instanceMethodSignatureForSelector:", @"resolveClassMethod:"
+    ];
+    void (^setupForwarderFiltered)(Class, SEL) = ^(Class cls, SEL sel) {
         if((cls == object_getClass([NSObject class])) || (cls == [NSObject class]) || (cls == object_getClass(cls)))
             return;
-        NSString *className = NSStringFromClass(cls);
-        if([className isEqualToString:@"NSManagedObject"])
+        if(OCMIsApplePrivateMethod(cls, sel))
             return;
-        NSString *selName = NSStringFromSelector(sel);
-        if(([className hasPrefix:@"NS"] || [className hasPrefix:@"UI"]) &&
-           ([selName hasPrefix:@"_"] || [selName hasSuffix:@"_"]))
-            return;
-        if([methodBlackList containsObject:selName])
+        if([methodsNotToForward containsObject:NSStringFromSelector(sel)])
             return;
         @try
         {
@@ -142,8 +159,10 @@
         {
             // ignore for now
         }
-    }];
+    };
+    [NSObject enumerateMethodsInClass:originalMetaClass usingBlock:setupForwarderFiltered];
 }
+
 
 - (void)setupForwarderForClassMethodSelector:(SEL)selector
 {
@@ -157,20 +176,20 @@
 
     Class metaClass = object_getClass(mockedClass);
     IMP forwarderIMP = [originalMetaClass instanceMethodForwarderForSelector:selector];
-    class_replaceMethod(metaClass, selector, forwarderIMP, types);
     class_addMethod(metaClass, aliasSelector, originalIMP, types);
+    class_replaceMethod(metaClass, selector, forwarderIMP, types);
 }
 
 
 - (void)forwardInvocationForClassObject:(NSInvocation *)anInvocation
 {
-	// in here "self" is a reference to the real class, not the mock
-	OCClassMockObject *mock = OCMGetAssociatedMockForClass((Class) self, YES);
+    // in here "self" is a reference to the real class, not the mock
+    OCClassMockObject *mock = OCMGetAssociatedMockForClass((Class)self, YES);
     if(mock == nil)
     {
         [NSException raise:NSInternalInconsistencyException format:@"No mock for class %@", NSStringFromClass((Class)self)];
     }
-	if([mock handleInvocation:anInvocation] == NO)
+    if([mock handleInvocation:anInvocation] == NO)
     {
         [anInvocation setSelector:OCMAliasForOriginalSelector([anInvocation selector])];
         [anInvocation invoke];
@@ -183,7 +202,7 @@
 }
 
 
-#pragma mark  Proxy API
+#pragma mark Proxy API
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
 {
@@ -218,8 +237,10 @@
 - (BOOL)conformsToProtocol:(Protocol *)aProtocol
 {
     Class clazz = mockedClass;
-    while (clazz != nil) {
-        if (class_conformsToProtocol(clazz, aProtocol)) {
+    while(clazz != nil)
+    {
+        if(class_conformsToProtocol(clazz, aProtocol))
+        {
             return YES;
         }
         clazz = class_getSuperclass(clazz);
@@ -230,7 +251,7 @@
 @end
 
 
-#pragma mark  -
+#pragma mark -
 
 /*
  taken from:

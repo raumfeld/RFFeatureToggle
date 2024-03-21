@@ -49,13 +49,12 @@
     }
     else
     {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         [[RFFeatureAPIClient sharedClient] GET:url
                                     parameters:parameters
+                                       headers:nil
+                                      progress:^(NSProgress * _Nonnull downloadProgress) { }
                                        success:success
                                        failure:failure];
-#pragma clang diagnostic pop
     }
 }
 

@@ -1,5 +1,5 @@
 /*
- *  Copyright (c) 2009-2016 Erik Doernenburg and contributors
+ *  Copyright (c) 2009-2021 Erik Doernenburg and contributors
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may
  *  not use these files except in compliance with the License. You may obtain
@@ -14,14 +14,14 @@
  *  under the License.
  */
 
+#import <objc/runtime.h>
 #import "NSMethodSignature+OCMAdditions.h"
 #import "OCMFunctionsPrivate.h"
-#import <objc/runtime.h>
 
 
 @implementation NSMethodSignature(OCMAdditions)
 
-#pragma mark    Signatures for dynamic properties
+#pragma mark Signatures for dynamic properties
 
 + (NSMethodSignature *)signatureForDynamicPropertyAccessedWithSelector:(SEL)selector inClass:(Class)aClass
 {
@@ -29,7 +29,7 @@
     objc_property_t property = [self propertyMatchingSelector:selector inClass:aClass isGetter:&isGetter];
     if(property == NULL)
         return nil;
-    
+
     const char *propertyAttributesString = property_getAttributes(property);
     NSArray *propertyAttributes = [[NSString stringWithCString:propertyAttributesString
                                                       encoding:NSASCIIStringEncoding] componentsSeparatedByString:@","];
@@ -49,7 +49,7 @@
     NSRange r = [typeStr rangeOfString:@"\""]; // incomplete workaround to deal with structs
     if(r.location != NSNotFound)
         typeStr = [typeStr substringToIndex:r.location];
-    
+
     NSString *sigStringFormat = isGetter ? @"%@@:" : @"v@:%@";
     const char *sigCString = [[NSString stringWithFormat:sigStringFormat, typeStr] cStringUsingEncoding:NSASCIIStringEncoding];
     return [NSMethodSignature signatureWithObjCTypes:sigCString];
@@ -59,7 +59,7 @@
 + (objc_property_t)propertyMatchingSelector:(SEL)selector inClass:(Class)aClass isGetter:(BOOL *)isGetterPtr
 {
     NSString *propertyName = NSStringFromSelector(selector);
-    
+
     // first try selector as is aassuming it's a getter
     objc_property_t property = class_getProperty(aClass, [propertyName cStringUsingEncoding:NSASCIIStringEncoding]);
     if(property != NULL)
@@ -83,18 +83,18 @@
             return property;
         }
     }
-    
+
     // search through properties with custom getter/setter that corresponds to selector
     unsigned int propertiesCount = 0;
     objc_property_t *allProperties = class_copyPropertyList(aClass, &propertiesCount);
-    for(unsigned int i = 0 ; i < propertiesCount; i++)
+    for(unsigned int i = 0; i < propertiesCount; i++)
     {
         NSArray *propertyAttributes = [[NSString stringWithCString:property_getAttributes(allProperties[i])
-                                                 encoding:NSASCIIStringEncoding] componentsSeparatedByString:@","];
+                                                          encoding:NSASCIIStringEncoding] componentsSeparatedByString:@","];
         for(NSString *attribute in propertyAttributes)
         {
             if(([attribute hasPrefix:@"G"] || [attribute hasPrefix:@"S"]) &&
-                    [[attribute substringFromIndex:1] isEqualToString:propertyName])
+                [[attribute substringFromIndex:1] isEqualToString:propertyName])
             {
                 *isGetterPtr = ![attribute hasPrefix:@"S"];
                 property = allProperties[i];
@@ -109,31 +109,7 @@
 }
 
 
-#pragma mark    Signatures for blocks
-
-struct OCMBlockDef
-{
-    void *isa; // initialized to &_NSConcreteStackBlock or &_NSConcreteGlobalBlock
-    int flags;
-    int reserved;
-    void (*invoke)(void *, ...);
-    struct block_descriptor {
-        unsigned long int reserved;                 // NULL
-        unsigned long int size;                     // sizeof(struct Block_literal_1)
-        // optional helper functions
-        void (*copy_helper)(void *dst, void *src);  // IFF (1<<25)
-        void (*dispose_helper)(void *src);          // IFF (1<<25)
-        // required ABI.2010.3.16
-        const char *signature;                      // IFF (1<<30)
-    } *descriptor;
-};
-
-enum
-{
-    OCMBlockDescriptionFlagsHasCopyDispose = (1 << 25),
-    OCMBlockDescriptionFlagsHasSignature   = (1 << 30)
-};
-
+#pragma mark Signatures for blocks
 
 + (NSMethodSignature *)signatureForBlock:(id)block
 {
@@ -152,7 +128,7 @@ enum
     signatureLocation += sizeof(unsigned long int);
     if(blockRef->flags & OCMBlockDescriptionFlagsHasCopyDispose)
     {
-        signatureLocation += sizeof(void(*)(void *dst, void *src));
+        signatureLocation += sizeof(void (*)(void *dst, void *src));
         signatureLocation += sizeof(void (*)(void *src));
     }
 
@@ -161,7 +137,7 @@ enum
 }
 
 
-#pragma mark    Extended attributes
+#pragma mark Extended attributes
 
 - (BOOL)usesSpecialStructureReturn
 {
@@ -191,7 +167,7 @@ enum
 {
     NSMutableString *typeString = [NSMutableString string];
     [typeString appendFormat:@"%s", [self methodReturnType]];
-    for (NSUInteger i=0; i<[self numberOfArguments]; i++)
+    for(NSUInteger i = 0; i < [self numberOfArguments]; i++)
         [typeString appendFormat:@"%s", [self getArgumentTypeAtIndex:i]];
     return typeString;
 }
