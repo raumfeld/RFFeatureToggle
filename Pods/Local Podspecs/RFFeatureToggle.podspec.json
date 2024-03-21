@@ -1,6 +1,6 @@
 {
   "name": "RFFeatureToggle",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "license": "MIT",
   "summary": "A simple A/B testing framework for remotely switching features on and off and having the changes reflect in the app immediately.",
   "homepage": "https://github.com/raumfeld/RFFeatureToggle",
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "https://github.com/raumfeld/RFFeatureToggle.git",
-    "tag": "1.0.6"
+    "tag": "1.1.0"
   },
   "platforms": {
     "ios": "9.3"
